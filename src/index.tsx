@@ -1,3 +1,4 @@
+import Header from 'components/header'
 import { createRoot } from 'react-dom/client'
 import 'tailwindcss/tailwind.css'
 
@@ -5,9 +6,12 @@ const container = document.getElementById('root') as HTMLDivElement
 const root = createRoot(container)
 
 function App() {
-    return (
-      <div className="bg-white">
-        <div className="mx-auto max-w-screen-xl py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+  return (
+    <div className="font-montserrat bg-white min-h-screen flex flex-col">
+      <div className='h-screen w-screen'>
+        <Header />
+
+        <div className="h-full mx-auto max-w-screen-xl py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-base font-semibold uppercase tracking-wide text-blue-600">
               Welcome to
@@ -19,8 +23,13 @@ function App() {
           </div>
         </div>
       </div>
-    )
-  }
-  
+
+      <div className='h-20 bg-yellow-50 w-full'>
+
+      </div>
+
+    </div>
+  )
+}
 
 root.render(<App />)
