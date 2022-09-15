@@ -22,7 +22,7 @@ const Hero: FunctionComponent = () => {
         </div>
       </div>
 
-      <img className="h-auto w-9/12 ml-auto mr-auto mt-12" src={hero_img} />
+      <img className="h-auto w-[35vh] ml-auto mr-auto mt-12" src={hero_img} />
 
       <div className="flex flex-1 justify-center flex-col">
         <div className="text-center pr-5 pl-5">
