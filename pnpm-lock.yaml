@@ -5,6 +5,8 @@ specifiers:
   '@babel/preset-env': ^7.18.10
   '@babel/preset-react': ^7.18.6
   '@babel/preset-typescript': ^7.18.6
+  '@splinetool/react-spline': ^2.2.2
+  '@splinetool/runtime': ^0.9.106
   '@testing-library/react': ^13.3.0
   '@types/node': ^18.7.13
   '@types/react': ^18.0.18
@@ -29,6 +31,8 @@ specifiers:
   vite-tsconfig-paths: ^3.5.0
 
 dependencies:
+  '@splinetool/react-spline': 2.2.2_gem4rdodkzll4b73awnfqpvr2m
+  '@splinetool/runtime': 0.9.106
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
 
@@ -1447,6 +1451,25 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
     dev: true
+
+  /@splinetool/react-spline/2.2.2_gem4rdodkzll4b73awnfqpvr2m:
+    resolution: {integrity: sha512-4OW2Y8ONHitNClB9bB0AJhVRXP2oakV5cLkbJE++wMsA7rFTWPAC74XM/pQlXYWix/lP+A8iUFi055IhewrC8A==}
+    peerDependencies:
+      '@splinetool/runtime': '*'
+      react: '>=17.0.0'
+      react-dom: '>=17.0.0'
+    dependencies:
+      '@splinetool/runtime': 0.9.106
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-merge-refs: 1.1.0
+    dev: false
+
+  /@splinetool/runtime/0.9.106:
+    resolution: {integrity: sha512-ivV8h1BrmJrZq1XVqXMPLn8QLpqT8zQqMRMd6v/io0TIL0F44RNcPIbaK+bAIxWlsIvdZMJH5Wqv9Cqo9FPyHw==}
+    dependencies:
+      on-change: 4.0.1
+    dev: false
 
   /@testing-library/dom/8.17.1:
     resolution: {integrity: sha512-KnH2MnJUzmFNPW6RIKfd+zf2Wue8mEKX0M3cpX6aKl5ZXrJM1/c/Pc8c2xDNYQCnJO48Sm5ITbMXgqTr3h4jxQ==}
@@ -3083,6 +3106,11 @@ packages:
       es-abstract: 1.20.1
     dev: true
 
+  /on-change/4.0.1:
+    resolution: {integrity: sha512-Gxmr/8NsLTigoUUEPvnAIUGl7uxwfC3Mm1G+qTmODEZcT4ZGfeaFyQgfGCdbKVS2pICIFYB82RH6MUHToPcS4Q==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dev: false
+
   /once/1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
     dependencies:
@@ -3295,6 +3323,10 @@ packages:
   /react-is/17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
     dev: true
+
+  /react-merge-refs/1.1.0:
+    resolution: {integrity: sha512-alTKsjEL0dKH/ru1Iyn7vliS2QRcBp9zZPGoWxUOvRGWPUYgjo+V01is7p04It6KhgrzhJGnIj9GgX8W4bZoCQ==}
+    dev: false
 
   /react-refresh/0.14.0:
     resolution: {integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==}
