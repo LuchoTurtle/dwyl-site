@@ -4,7 +4,7 @@ import hero_img from 'public/hero.png'
 
 const Hero: FunctionComponent = () => {
   return (
-    <div className='min-h-screen max-h-screen w-screen flex flex-col'>
+    <div className="min-h-screen max-h-screen w-screen flex flex-col">
       <div className="h-fit flex flex-row flex-nowrap justify-between items-center pl-10 pr-10 pt-10">
         <div className="w-24 h-12">
           <img className="max-h-full max-w-full" src={logo} />
@@ -31,9 +31,11 @@ const Hero: FunctionComponent = () => {
             <p className="text-green-900/50">made simple.</p>
           </h2>
 
-          <div className='mt-5 text-base'>
-            <p className='text-gray-600 leading-5'>we offer software development services and training.</p>
-            <p className='font-thin text-gray-600 mt-2'>based in London.</p>
+          <div className="mt-5 text-base">
+            <p className="text-gray-600 leading-5">
+              we offer software development services and training.
+            </p>
+            <p className="font-thin text-gray-600 mt-2">based in London.</p>
           </div>
         </div>
       </div>
