@@ -5,6 +5,8 @@ interface ValueBoxProps extends React.PropsWithChildren {
   titleEmoji: string
   titlePosition?: 'top' | 'bottom'
   titleOrientation?: 'left' | 'right'
+
+  borderStyles?: string
 }
 
 const Title: FunctionComponent<
@@ -32,11 +34,20 @@ const Title: FunctionComponent<
 }
 
 const ValueBox: FunctionComponent<ValueBoxProps> = (props: ValueBoxProps) => {
-  const { title, titleEmoji, titlePosition, titleOrientation, children } = props
+  const {
+    title,
+    titleEmoji,
+    titlePosition,
+    titleOrientation,
+    borderStyles,
+    children
+  } = props
 
   return (
-    <div className="rounded-xl w-4/6 h-fit mx-auto bg-gradient-to-r p-[6px] from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]">
-      <div className="flex flex-col justify-between h-full bg-white rounded-lg pb-6 pl-8 pr-5 pt-6">
+    <div
+      className={`rounded-[2.7rem] w-4/6 h-fit mx-auto bg-gradient-to-br p-[3px] ${borderStyles}`}
+    >
+      <div className="flex flex-col justify-between h-full bg-white rounded-[2.6rem] pb-6 pl-8 pr-5 pt-6">
         {titlePosition === 'bottom' ? (
           <>
             <p className="font-normal text-stone-700">{children}</p>
