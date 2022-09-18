@@ -1,5 +1,6 @@
 import Definition from 'components/definition'
 import Hero from 'components/hero'
+import MVP from 'components/mvp'
 import ValueBox from 'components/value_box'
 import { createRoot } from 'react-dom/client'
 import 'tailwindcss/tailwind.css'
@@ -15,7 +16,7 @@ function App() {
       <div className="pt-40">
         <Definition />
       </div>
-      
+
       <div className="pt-40">
         <ValueBox
           title="People"
@@ -66,6 +67,10 @@ function App() {
             love.
           </ValueBox>
         </div>
+      </div>
+
+      <div className="pt-40 pb-40">
+        <MVP/>
       </div>
     </div>
   )
