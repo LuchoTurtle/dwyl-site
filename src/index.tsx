@@ -3,8 +3,13 @@ import Hero from 'components/hero'
 import MVP from 'components/mvp'
 import ValueBox from 'components/value_box'
 import { createRoot } from 'react-dom/client'
-import step0_img from 'public/step0.png'
 import 'tailwindcss/tailwind.css'
+import { Carousel } from 'react-responsive-carousel'
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
+import step0_img from 'public/step0.png'
+import step1_img from 'public/step1.png'
+import step2_img from 'public/step2.png'
+import step3_img from 'public/step3.png'
 
 const container = document.getElementById('root') as HTMLDivElement
 const root = createRoot(container)
@@ -85,10 +90,79 @@ function App() {
           <p className="font-medium text-[9px] text-stone-500 uppercase mt-5">
             meet your needs quickly and without waste
           </p>
-
-          <img className="h-auto w-[35vh] ml-auto mr-auto mt-12" src={step0_img} />
-
         </div>
+
+        <Carousel
+          showArrows={false}
+          showIndicators={false}
+          showStatus={false}
+          showThumbs={false}
+          swipeable
+          autoPlay
+          infiniteLoop
+          interval={5000}
+          transitionTime={700}
+        >
+          <div className=" pr-8 pl-8">
+            <img
+              className="h-auto w-[35vh] ml-auto mr-auto mt-12"
+              src={step0_img}
+            />
+          </div>
+
+          <div className=" pr-8 pl-8">
+            <img
+              className="h-auto w-[35vh] ml-auto mr-auto mt-12"
+              src={step1_img}
+            />
+
+            <div className="mt-8 text-start">
+              <h4 className="text-xs text-emerald-900 font-bold">
+                1. understanding the problem
+              </h4>
+              <p className="font-medium text-[#DA6844] text-[0.6rem]">
+                we work together to understand the identified problem and
+                confirm the intended users feel the pain and need for a
+                solution.
+              </p>
+            </div>
+          </div>
+
+          <div className=" pr-8 pl-8">
+            <img
+              className="h-auto w-[35vh] ml-auto mr-auto mt-12"
+              src={step2_img}
+            />
+
+            <div className="mt-8 text-start">
+              <h4 className="text-xs text-emerald-900 font-bold">
+                2. make the next market-ready version of the solution
+              </h4>
+              <p className="font-medium text-[#DA6844] text-[0.6rem]">
+                we work together to understand the identified problem and
+                confirm the intended users feel the pain and need for a
+                solution.
+              </p>
+            </div>
+          </div>
+
+          <div className=" pr-8 pl-8">
+            <img
+              className="h-auto w-[35vh] ml-auto mr-auto mt-12"
+              src={step3_img}
+            />
+
+            <div className="mt-8 text-start">
+              <h4 className="text-xs text-emerald-900 font-bold">
+                3. review and return to step one
+              </h4>
+              <p className="font-medium text-[#DA6844] text-[0.6rem]">
+                we review all feedback and confirm we are making progress toward
+                solving the problem.{' '}
+              </p>
+            </div>
+          </div>
+        </Carousel>
       </div>
     </div>
   )
