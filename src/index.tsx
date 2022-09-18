@@ -3,6 +3,7 @@ import Hero from 'components/hero'
 import MVP from 'components/mvp'
 import ValueBox from 'components/value_box'
 import { createRoot } from 'react-dom/client'
+import step0_img from 'public/step0.png'
 import 'tailwindcss/tailwind.css'
 
 const container = document.getElementById('root') as HTMLDivElement
@@ -69,8 +70,25 @@ function App() {
         </div>
       </div>
 
-      <div className="pt-40 pb-40">
-        <MVP/>
+      <div className="pt-40">
+        <MVP />
+      </div>
+
+      <div className="pt-40">
+        <div className="w-screen flex flex-col pl-10 pr-10 text-center">
+          <h1 className="font-semibold text-3xl text-transparent bg-clip-text bg-gradient-to-r from-[#009FFF] to-[#EC2F4B]">
+            the right solution
+          </h1>
+          <h2 className="font-semibold text-xl text-stone-700">
+            (in 3 easy steps)
+          </h2>
+          <p className="font-medium text-[9px] text-stone-500 uppercase mt-5">
+            meet your needs quickly and without waste
+          </p>
+
+          <img className="h-auto w-[35vh] ml-auto mr-auto mt-12" src={step0_img} />
+
+        </div>
       </div>
     </div>
   )
