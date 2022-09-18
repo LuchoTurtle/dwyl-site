@@ -102,12 +102,31 @@ function App() {
           infiniteLoop
           interval={5000}
           transitionTime={700}
+          renderItem={(
+            item: React.ReactNode,
+            options?: {
+              isSelected: boolean
+              isPrevious: boolean
+            }
+          ) => {
+            return options?.isSelected ? <div>{item}</div> : <div className='opacity-50'>{item}</div>
+          }}
         >
           <div className=" pr-8 pl-8">
             <img
               className="h-auto w-[35vh] ml-auto mr-auto mt-12"
               src={step0_img}
             />
+
+            <div className="mt-8 text-start">
+              <h4 className="text-xs text-emerald-900 font-bold">
+                0. we get you to the finish line
+              </h4>
+              <p className="font-medium text-[#DA6844] text-[0.6rem]">
+                you have a vision for your product and we are here to make it a
+                reality.
+              </p>
+            </div>
           </div>
 
           <div className=" pr-8 pl-8">
