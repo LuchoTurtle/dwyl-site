@@ -3,8 +3,8 @@ import Hero from 'components/hero'
 import MVP from 'components/mvp'
 import Steps from 'components/steps'
 import ValueBox from 'components/value_box'
+import Portfolio from 'components/portfolio'
 import { createRoot } from 'react-dom/client'
-import smg_img from 'public/smg.png'
 import 'tailwindcss/tailwind.css'
 
 const container = document.getElementById('root') as HTMLDivElement
@@ -100,40 +100,7 @@ function App() {
       </div>
 
       <div className="pt-40 mr-4 ml-4 flex flex-col items-center">
-        <h2 className="text-center text-[40px] font-semibold text-[#248680] mb-20">
-          our porfolio
-        </h2>
-
-        <div
-          className="h-fit w-11/12 overflow-hidden rounded-[30px] relative
-         bg-gradient-to-br from-[#3EFB89] via-[#cc5e5e] to-[#FD6D6D]"
-        >
-          <img
-            className="rotate-[20deg] translate-x-[-55px] opacity-30 blur-[2px] absolute"
-            src={smg_img}
-          />
-
-          <div className="p-6 relative">
-            <h4 className="font-semibold text-2xl text-white">
-              The Science Museum Group
-            </h4>
-            <p className="font-normal text-xs text-white mt-2">
-              more than 250k artefacts, made accessible and searcheable.
-            </p>
-
-            <button
-              type="button"
-              className="max-h-full max-w-full inline-block w-24 h-10 px-2.5 py-2.5 mt-16
-                border border-white text-white 
-                text-xs leading-tight rounded-full
-                hover:bg-white hover:bg-opacity-10 hover:shadow-lg 
-                active:bg-green-900 active:shadow-lg transition duration-150 ease-in-out cursor-pointer
-                relative"
-            >
-              visit site
-            </button>
-          </div>
-        </div>
+        <Portfolio/>
       </div>
     </div>
   )
