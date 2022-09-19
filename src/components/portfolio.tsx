@@ -34,7 +34,7 @@ const Portfolio: FunctionComponent = () => {
                 border border-white text-white 
                 text-xs leading-tight rounded-full
                 hover:bg-white hover:bg-opacity-10 hover:shadow-lg 
-                active:bg-green-900 active:shadow-lg transition duration-150 ease-in-out cursor-pointer
+                active:bg-white active:bg-opacity-50 active:shadow-lg transition duration-150 ease-in-out cursor-pointer
                 relative"
           >
             visit site
@@ -65,7 +65,7 @@ const Portfolio: FunctionComponent = () => {
                 border border-white text-white 
                 text-xs leading-tight rounded-full
                 hover:bg-white hover:bg-opacity-10 hover:shadow-lg 
-                active:bg-green-900 active:shadow-lg transition duration-150 ease-in-out cursor-pointer
+                active:bg-white active:bg-opacity-50 active:shadow-lg transition duration-150 ease-in-out cursor-pointer
                 relative"
           >
             visit site
@@ -95,7 +95,7 @@ const Portfolio: FunctionComponent = () => {
                 border border-white text-white 
                 text-xs leading-tight rounded-full
                 hover:bg-white hover:bg-opacity-10 hover:shadow-lg 
-                active:bg-green-900 active:shadow-lg transition duration-150 ease-in-out cursor-pointer
+                active:bg-white active:bg-opacity-50 active:shadow-lg transition duration-150 ease-in-out cursor-pointer
                 relative"
           >
             visit site
@@ -126,7 +126,7 @@ const Portfolio: FunctionComponent = () => {
                 border border-white text-white 
                 text-xs leading-tight rounded-full
                 hover:bg-white hover:bg-opacity-10 hover:shadow-lg 
-                active:bg-green-900 active:shadow-lg transition duration-150 ease-in-out cursor-pointer
+                active:bg-white active:bg-opacity-50 active:shadow-lg transition duration-150 ease-in-out cursor-pointer
                 relative"
           >
             visit site
