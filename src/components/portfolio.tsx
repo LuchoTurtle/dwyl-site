@@ -133,6 +133,8 @@ const Portfolio: FunctionComponent = () => {
           </button>
         </div>
       </div>
+
+      <h4 className='font-medium text-[15px] mt-16 text-[#313131]'>and many more...</h4>
     </>
   )
 }
