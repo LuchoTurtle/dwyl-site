@@ -4,6 +4,7 @@ import MVP from 'components/mvp'
 import Steps from 'components/steps'
 import ValueBox from 'components/value_box'
 import Portfolio from 'components/portfolio'
+import OpenSource from 'components/open_source'
 import { createRoot } from 'react-dom/client'
 import 'tailwindcss/tailwind.css'
 
@@ -100,14 +101,14 @@ function App() {
       </div>
 
       <div className="pt-40 mr-4 ml-4 flex flex-col items-center">
-        <Portfolio/>
+        <Portfolio />
+      </div>
+
+      <div className="pt-40">
+        <OpenSource />
       </div>
     </div>
   )
 }
-
-/* 
-    transform: rotate(20deg) translateX(-54px);
-*/
 
 root.render(<App />)
