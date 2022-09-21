@@ -45,14 +45,14 @@ const ValueBox: FunctionComponent<ValueBoxProps> = (props: ValueBoxProps) => {
 
   return (
     <div
-      className={`rounded-[2.7rem] w-4/6 h-fit mx-auto bg-gradient-to-br p-[3px] ${borderStyles}`}
+      className={`mx-auto h-fit w-4/6 rounded-[2.7rem] bg-gradient-to-br p-[3px] ${borderStyles}`}
     >
-      <div className="flex flex-col justify-between h-full bg-white rounded-[2.6rem] pb-6 pl-8 pr-5 pt-6">
+      <div className="flex h-full flex-col justify-between rounded-[2.6rem] bg-white pb-6 pl-8 pr-5 pt-6">
         {titlePosition === 'bottom' ? (
           <>
             <p className="font-normal text-stone-700">{children}</p>
 
-            <div className="flex flex-row justify-between font-bold text-xl mt-4">
+            <div className="mt-4 flex flex-row justify-between text-xl font-bold">
               <Title
                 title={title}
                 titleEmoji={titleEmoji}
@@ -62,7 +62,7 @@ const ValueBox: FunctionComponent<ValueBoxProps> = (props: ValueBoxProps) => {
           </>
         ) : (
           <>
-            <div className="flex flex-row justify-between font-bold text-xl mb-4">
+            <div className="mb-4 flex flex-row justify-between text-xl font-bold">
               <Title
                 title={title}
                 titleEmoji={titleEmoji}
@@ -70,7 +70,7 @@ const ValueBox: FunctionComponent<ValueBoxProps> = (props: ValueBoxProps) => {
               />
             </div>
 
-            <p className="font-normal text-stone-700 text-sm">{children}</p>
+            <p className="text-sm font-normal text-stone-700">{children}</p>
           </>
         )}
       </div>

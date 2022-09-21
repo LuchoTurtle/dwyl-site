@@ -14,7 +14,7 @@ const root = createRoot(container)
 
 function App() {
   return (
-    <div className="font-montserrat bg-white">
+    <div className="bg-white font-montserrat">
       <Hero />
 
       <div className="pt-40">
@@ -82,18 +82,18 @@ function App() {
       </div>
 
       <div className="pt-40">
-        <div className="text-center mr-6 ml-6">
-          <h1 className="font-semibold text-base leading-4 text-stone-800">
+        <div className="mr-6 ml-6 text-center">
+          <h1 className="text-base font-semibold leading-4 text-stone-800">
             <span>by iterating over these </span>
             <span className="text-[#1DAA6F]">3 simple steps </span>
             <span>we maintain a </span>
             <span className="text-[#1DAA6F]">tight feedback loop </span>
             <span>between the people </span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B12A2A] to-[#1D82A1]">
+            <span className="bg-gradient-to-r from-[#B12A2A] to-[#1D82A1] bg-clip-text text-transparent">
               building
             </span>
             <span> and the people </span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#AC3EC8] to-[#FF630C]">
+            <span className="bg-gradient-to-r from-[#AC3EC8] to-[#FF630C] bg-clip-text text-transparent">
               using
             </span>
             .
@@ -101,7 +101,7 @@ function App() {
         </div>
       </div>
 
-      <div className="pt-40 mr-4 ml-4 flex flex-col items-center">
+      <div className="mr-4 ml-4 flex flex-col items-center pt-40">
         <Portfolio />
       </div>
 
@@ -110,11 +110,11 @@ function App() {
       </div>
 
       <div className="flex pt-40 pr-10 pl-10">
-        <span className="w-full p-[1px] bg-stone-200"></span>
+        <span className="w-full bg-stone-200 p-[1px]"></span>
       </div>
 
       <div className="pt-20">
-        <Footer/>
+        <Footer />
       </div>
     </div>
   )
