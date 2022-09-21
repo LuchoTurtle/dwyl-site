@@ -2,7 +2,7 @@ import Definition from 'components/definition'
 import Hero from 'components/hero'
 import MVP from 'components/mvp'
 import Steps from 'components/steps'
-import ValueBox from 'components/value_box'
+import Values from 'components/values'
 import Portfolio from 'components/portfolio'
 import OpenSource from 'components/open_source'
 import Footer from 'components/footer'
@@ -22,55 +22,7 @@ function App() {
       </div>
 
       <div className="pt-40">
-        <ValueBox
-          title="People"
-          titleEmoji="🧑‍🤝‍🧑"
-          borderStyles="from-[#CCABD8] via-[#9AAEE3] to-[#FA897B]"
-        >
-          Our people are our primary focus, not profit. We have a worldwide
-          community of over 400 creative technologists. We believe in
-          inclusivity and accessibility and want to enrich the lives of everyone
-          in our community.
-        </ValueBox>
-
-        <div className="mt-20">
-          <ValueBox
-            title="Transparency"
-            titleEmoji="🤝"
-            borderStyles="from-[#86E3CE] via-[#E39AD3] to-[#FFDD94]"
-          >
-            Open-Source and Open-Kimono: we’re building dwyl for all to see! The
-            vast majority of dwyl projects are written open-source. This allows
-            code modules to improve and adapt over time allowing for a more
-            robust and up-to-date application.
-          </ValueBox>
-        </div>
-
-        <div className="mt-20">
-          <ValueBox
-            title="Green"
-            titleEmoji="🌍"
-            borderStyles="from-[#D05C5C] via-[#9AE3C0] to-[#BFC857]"
-          >
-            We recycle and are carbon neutral, but it’s not just the planet’s
-            environment we want to improve. We love projects that have a
-            positive effect on the world. Take a look at the kinds of project we
-            love.
-          </ValueBox>
-        </div>
-
-        <div className="mt-20">
-          <ValueBox
-            title="Organic Growth"
-            titleEmoji="🌳"
-            borderStyles="from-[#D8D3AB] via-[#E39E9A] to-[#FA7B7B]"
-          >
-            We recycle and are carbon neutral, but it’s not just the planet’s
-            environment we want to improve. We love projects that have a
-            positive effect on the world. Take a look at the kinds of project we
-            love.
-          </ValueBox>
-        </div>
+        <Values/>
       </div>
 
       <div className="pt-40">
@@ -82,8 +34,8 @@ function App() {
       </div>
 
       <div className="pt-40">
-        <div className="mr-6 ml-6 text-center">
-          <h1 className="text-base font-semibold leading-4 text-stone-800">
+        <div className="mr-6 ml-6 sm:mr-[15%] sm:ml-[15%] text-center">
+          <h1 className="text-base md:text-2xl font-semibold leading-4 text-stone-800">
             <span>by iterating over these </span>
             <span className="text-[#1DAA6F]">3 simple steps </span>
             <span>we maintain a </span>

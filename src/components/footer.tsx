@@ -3,20 +3,22 @@ import { FunctionComponent } from 'react'
 const Footer: FunctionComponent = () => {
   return (
     <div className="pr-10 pl-10">
-      <h2 className="text-[41px] font-semibold text-[#248680]">let's talk</h2>
-      <h4 className="text-lg font-semibold text-stone-500">
+      <h2 className="text-[41px] font-semibold text-[#248680] md:text-[61px]">
+        let's talk
+      </h2>
+      <h4 className="text-lg font-semibold text-stone-500 md:text-2xl">
         We'll get back to you within 24 hours
       </h4>
 
-      <h4 className="mt-10 text-[26px] font-semibold text-[#D14E4E] underline">
+      <h4 className="mt-10 text-[26px] font-semibold text-[#D14E4E] underline md:text-[32px]">
         hello@dwyl.com
       </h4>
-      <h4 className="text-[22px] font-semibold text-[#444444]">
+      <h4 className="text-[22px] font-semibold text-[#444444] md:text-[28px]">
         +44 (0) 7708 796446
       </h4>
 
       <div className="mt-28 flex flex-row items-end justify-between pb-10">
-        <span className="text-[11px] font-normal text-[#248680] opacity-40">
+        <span className="text-[11px] font-normal text-[#248680] opacity-40 md:text-[17px]">
           @ 2014 - 2022 dwyl, LLC
         </span>
         <div className="flex flex-row">

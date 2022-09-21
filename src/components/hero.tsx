@@ -26,12 +26,12 @@ const Hero: FunctionComponent = () => {
 
       <div className="flex flex-1 flex-col justify-center">
         <div className="pr-5 pl-5 text-center">
-          <h2 className="text-4xl font-semibold leading-none tracking-tight">
+          <h2 className="text-4xl font-semibold leading-none tracking-tight md:text-[3.5rem]">
             <p className="text-green-900">software</p>
             <p className="text-green-900/50">made simple.</p>
           </h2>
 
-          <div className="mt-5 text-base">
+          <div className="mt-5 text-base md:text-lg">
             <p className="leading-5 text-gray-600">
               we offer software development services and training.
             </p>

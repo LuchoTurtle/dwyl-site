@@ -7,13 +7,14 @@ import oxford_img from 'public/oxford.webp'
 const Portfolio: FunctionComponent = () => {
   return (
     <>
-      <h2 className="mb-20 text-center text-[40px] font-semibold text-[#248680]">
+      <h2 className="mb-20 text-center text-[40px] font-semibold text-[#248680] md:text-[50px]">
         our porfolio
       </h2>
 
       <div
-        className="relative h-fit w-11/12 overflow-hidden rounded-[30px]
-         bg-gradient-to-br from-[#3EFB89] via-[#cc5e5e] to-[#FD6D6D]"
+        className="relative h-fit w-11/12 overflow-hidden
+         rounded-[30px] bg-gradient-to-br
+         from-[#3EFB89] via-[#cc5e5e] to-[#FD6D6D] sm:w-[350px]"
       >
         <img
           className="absolute translate-x-[-55px] rotate-[20deg] opacity-30 blur-[2px]"
@@ -43,8 +44,8 @@ const Portfolio: FunctionComponent = () => {
       </div>
 
       <div
-        className="relative mt-12 h-fit w-11/12 overflow-hidden rounded-[30px]
-         bg-gradient-to-br from-[#3EFB89] to-[#6A5BC5]"
+        className="relative mt-12 h-fit w-11/12 overflow-hidden rounded-[30px] bg-gradient-to-br
+         from-[#3EFB89] to-[#6A5BC5] sm:w-[350px]"
       >
         <img
           className="absolute translate-x-[95px] translate-y-[3px]  rotate-[344deg] opacity-30"
@@ -74,8 +75,8 @@ const Portfolio: FunctionComponent = () => {
       </div>
 
       <div
-        className="relative mt-12 h-fit w-11/12 overflow-hidden rounded-[30px]
-         bg-gradient-to-br from-[#FF9190] to-[#6A5BC5]"
+        className="relative mt-12 h-fit w-11/12 overflow-hidden rounded-[30px] bg-gradient-to-br
+         from-[#FF9190] to-[#6A5BC5] sm:w-[350px]"
       >
         <img
           className="absolute translate-x-[95px] translate-y-[40px]  rotate-[344deg] opacity-30"
@@ -104,8 +105,8 @@ const Portfolio: FunctionComponent = () => {
       </div>
 
       <div
-        className="relative mt-12 h-fit w-11/12 overflow-hidden rounded-[30px]
-         bg-gradient-to-br from-[#FF9190] to-[#FDC094]"
+        className="relative mt-12 h-fit w-11/12 overflow-hidden rounded-[30px] bg-gradient-to-br
+         from-[#FF9190] to-[#FDC094] sm:w-[350px]"
       >
         <img
           className="absolute translate-x-[-70px] translate-y-[10px]  rotate-[25deg] opacity-30"
@@ -134,7 +135,7 @@ const Portfolio: FunctionComponent = () => {
         </div>
       </div>
 
-      <h4 className="mt-16 text-[15px] font-medium text-[#313131]">
+      <h4 className="mt-16 text-[15px] font-medium text-[#313131] md:text-[20px]">
         and many more...
       </h4>
     </>

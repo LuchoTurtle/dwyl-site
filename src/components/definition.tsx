@@ -3,8 +3,8 @@ import { FunctionComponent } from 'react'
 const Definition: FunctionComponent = () => {
   return (
     <div className="flex w-screen flex-col items-center">
-      <div className="w-3/5">
-        <h2 className="text-center">
+      <div className="w-52 text-justify md:w-72">
+        <h2>
           <span className="text-5xl font-semibold text-teal-800">dwyl</span>
           <sup className="align-super text-lg font-semibold text-teal-700/75">
             [/dwɪɫ/]
