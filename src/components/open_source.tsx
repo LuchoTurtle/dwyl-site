@@ -5,7 +5,7 @@ const OpenSource: FunctionComponent = () => {
   return (
     <div className="flex flex-col items-center pl-5 pr-5">
       <img className="h-auto w-full" src={github_img} />
-      <h2 className="font-semibold text-2xl">
+      <h2 className="font-semibold text-2xl mt-4">
         <span className="text-[#248680]">we are full on </span>
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F97794] to-[#623AA2]">
           open-source

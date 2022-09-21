@@ -5,6 +5,7 @@ import Steps from 'components/steps'
 import ValueBox from 'components/value_box'
 import Portfolio from 'components/portfolio'
 import OpenSource from 'components/open_source'
+import Footer from 'components/footer'
 import { createRoot } from 'react-dom/client'
 import 'tailwindcss/tailwind.css'
 
@@ -106,6 +107,14 @@ function App() {
 
       <div className="pt-40">
         <OpenSource />
+      </div>
+
+      <div className="flex pt-40 pr-10 pl-10">
+        <span className="w-full p-[1px] bg-stone-200"></span>
+      </div>
+
+      <div className="pt-20">
+        <Footer/>
       </div>
     </div>
   )
