@@ -1,8 +1,28 @@
-import { FunctionComponent } from 'react'
+import { FunctionComponent, useEffect, useRef } from 'react'
 import logo from 'public/dwyl_logo.png'
 import hero_img from 'public/hero.png'
+import gsap from 'gsap'
+import { staggerReveal, fadeUpReveal } from 'utils'
 
 const Hero: FunctionComponent = () => {
+  const titleRef = useRef(null)
+  const subtitleRef = useRef(null)
+  const description1Ref = useRef(null)
+  const description2Ref = useRef(null)
+
+  useEffect(() => {
+    const titleEl = titleRef.current
+    const subtitleEl = subtitleRef.current
+    const description1El = description1Ref.current
+    const description2El = description2Ref.current
+
+    const tl = gsap.timeline()
+    tl.from(titleEl, staggerReveal)
+    tl.from(subtitleEl, staggerReveal, '<')
+    tl.from(description1El, fadeUpReveal, '<+=.4')
+    tl.from(description2El, fadeUpReveal, '<+=.1')
+  }, [])
+
   return (
     <div className="flex max-h-screen min-h-screen w-screen flex-col">
       <div className="flex h-fit flex-row flex-nowrap items-center justify-between pl-10 pr-10 pt-10">
@@ -26,16 +46,40 @@ const Hero: FunctionComponent = () => {
 
       <div className="flex flex-1 flex-col justify-center">
         <div className="pr-5 pl-5 text-center">
-          <h2 className="text-4xl font-semibold leading-none tracking-tight md:text-[3.5rem]">
-            <p className="text-green-900">software</p>
-            <p className="text-green-900/50">made simple.</p>
-          </h2>
+          <div className="relative flex h-[2.5rem] w-full flex-row justify-center overflow-hidden md:h-[3.5rem]">
+            <p
+              className="absolute text-4xl font-semibold leading-none tracking-tight text-green-900 md:text-[3.5rem]"
+              ref={titleRef}
+            >
+              software
+            </p>
+          </div>
+          <div className="relative flex h-[2.5rem] w-full flex-row justify-center overflow-hidden md:h-[3.5rem]">
+            <p
+              className="absolute text-4xl font-semibold leading-none tracking-tight text-green-900/50 md:text-[3.5rem]"
+              ref={subtitleRef}
+            >
+              made simple.
+            </p>
+          </div>
 
           <div className="mt-5 text-base md:text-lg">
-            <p className="leading-5 text-gray-600">
-              we offer software development services and training.
-            </p>
-            <p className="mt-2 font-thin text-gray-600">based in London.</p>
+            <div className="relative flex h-[2.5rem] w-full flex-row justify-center overflow-hidden md:h-[18px]">
+              <p
+                className="absolute h-[1.5rem] leading-5 text-gray-600"
+                ref={description1Ref}
+              >
+                we offer software development services and training.
+              </p>
+            </div>
+            <div className="relative flex h-[2.5rem] w-full flex-row justify-center overflow-hidden md:h-[2.5rem]">
+              <p
+                className="absolute mt-2 h-[1.5rem] font-thin text-gray-600"
+                ref={description2Ref}
+              >
+                based in London.
+              </p>
+            </div>
           </div>
         </div>
       </div>
