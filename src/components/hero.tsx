@@ -34,6 +34,10 @@ const Hero: FunctionComponent = () => {
     tl.from(subtitleEl, staggerReveal, '<')
     tl.from(description1El, fadeUpReveal, '<+=.4')
     tl.from(description2El, fadeUpReveal, '<+=.1')
+
+    return () => {
+      tl.kill()
+    }
   }, [])
 
   return (
@@ -77,7 +81,7 @@ const Hero: FunctionComponent = () => {
           </div>
 
           <div className="mt-5 text-base md:text-lg">
-            <div className="relative flex h-[2.5rem] w-full flex-row justify-center overflow-hidden md:h-[18px] lg:h-[45px] lg:justify-start">
+            <div className="relative flex h-[2.5rem] w-full flex-row justify-center overflow-hidden md:h-[20px] lg:h-[45px] lg:justify-start">
               <p
                 className="absolute h-[1.5rem] leading-5 text-gray-600 lg:text-start"
                 ref={description1Ref}
