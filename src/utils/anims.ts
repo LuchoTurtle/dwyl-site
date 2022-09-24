@@ -14,3 +14,11 @@ export const fadeUpReveal = {
     y: 20,
     ease: 'power4.out', 
 }
+
+export const scaleUpReveal = {
+  duration: 1,
+  opacity: 0,
+  scale: 1.1,
+  y: 20,
+  ease: 'power3.out'
+}
