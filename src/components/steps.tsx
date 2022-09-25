@@ -12,6 +12,9 @@ interface SliderItemProps {
   image: string
 }
 
+//https://codepen.io/GreenSock/pen/KKpLdWW
+// add locomotive scroll
+
 const SliderItem: FunctionComponent<SliderItemProps> = (
   props: SliderItemProps
 ) => {
@@ -37,7 +40,7 @@ const SliderItem: FunctionComponent<SliderItemProps> = (
 const Steps: FunctionComponent = () => {
   return (
     <>
-      <div className="mb-5 flex w-screen flex-col pl-10 pr-10 text-center">
+      <div className="mb-5 flex w-full flex-col pl-10 pr-10 text-center">
         <h1 className="bg-gradient-to-r from-[#009FFF] to-[#EC2F4B] bg-clip-text text-3xl font-semibold text-transparent md:text-5xl md:leading-[1.3]">
           the right solution
         </h1>

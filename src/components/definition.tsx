@@ -84,7 +84,7 @@ const Definition: FunctionComponent = () => {
   }, [])
 
   return (
-    <div className="flex w-screen flex-col items-center" ref={containerRef}>
+    <div className="flex w-full flex-col items-center" ref={containerRef}>
       <div className="w-52 text-justify md:w-72">
         <h2>
           <span

@@ -42,7 +42,7 @@ const Hero: FunctionComponent = () => {
   }, [])
 
   return (
-    <div className="flex max-h-screen min-h-screen w-screen flex-col">
+    <div className="flex max-h-screen min-h-screen w-full flex-col">
       <div className="z-10 flex h-fit flex-row flex-nowrap items-center justify-between pl-10 pr-10 pt-10">
         <div className="h-12 w-24">
           <img className="max-h-full max-w-full" src={logo} />
