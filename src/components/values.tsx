@@ -1,5 +1,5 @@
 import { FunctionComponent, useEffect, useLayoutEffect, useRef } from 'react'
-import { scaleUpReveal, useHover } from 'utils'
+import { scaleUpReveal, useHover, useMediaQuery } from 'utils'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
@@ -100,57 +100,61 @@ const Values: FunctionComponent = () => {
   const value3Ref = useRef(null)
   const value4Ref = useRef(null)
 
+  const isDesktop = useMediaQuery('(min-width: 1024px)')
+
   useLayoutEffect(() => {
-    const containerEl = containerRef.current
-    const value1El = value1Ref.current
-    const value2El = value2Ref.current
-    const value3El = value3Ref.current
-    const value4El = value4Ref.current
+    if (isDesktop) {
+      const containerEl = containerRef.current
+      const value1El = value1Ref.current
+      const value2El = value2Ref.current
+      const value3El = value3Ref.current
+      const value4El = value4Ref.current
 
-    let value1 = gsap.from(value1El, {
-      ...scaleUpReveal,
-      scrollTrigger: {
-        immediateRender: false,
-        trigger: containerEl,
-        start: 'top center'
+      let value1 = gsap.from(value1El, {
+        ...scaleUpReveal,
+        scrollTrigger: {
+          immediateRender: false,
+          trigger: containerEl,
+          start: 'top center'
+        }
+      })
+
+      let value2 = gsap.from(value2El, {
+        ...scaleUpReveal,
+        scrollTrigger: {
+          immediateRender: false,
+          trigger: containerEl,
+          start: 'top center'
+        },
+        delay: 0.2
+      })
+
+      let value3 = gsap.from(value3El, {
+        ...scaleUpReveal,
+        scrollTrigger: {
+          immediateRender: false,
+          trigger: containerEl,
+          start: 'top center'
+        },
+        delay: 0.3
+      })
+
+      let value4 = gsap.from(value4El, {
+        ...scaleUpReveal,
+        scrollTrigger: {
+          immediateRender: false,
+          trigger: containerEl,
+          start: 'top center'
+        },
+        delay: 0.4
+      })
+
+      return () => {
+        value1.kill()
+        value2.kill()
+        value3.kill()
+        value4.kill()
       }
-    })
-
-    let value2 = gsap.from(value2El, {
-      ...scaleUpReveal,
-      scrollTrigger: {
-        immediateRender: false,
-        trigger: containerEl,
-        start: 'top center'
-      },
-      delay: 0.2
-    })
-
-    let value3 = gsap.from(value3El, {
-      ...scaleUpReveal,
-      scrollTrigger: {
-        immediateRender: false,
-        trigger: containerEl,
-        start: 'top center'
-      },
-      delay: 0.3
-    })
-
-    let value4 = gsap.from(value4El, {
-      ...scaleUpReveal,
-      scrollTrigger: {
-        immediateRender: false,
-        trigger: containerEl,
-        start: 'top center'
-      },
-      delay: 0.4
-    })
-
-    return () => {
-      value1.kill()
-      value2.kill()
-      value3.kill()
-      value4.kill()
     }
   }, [])
 

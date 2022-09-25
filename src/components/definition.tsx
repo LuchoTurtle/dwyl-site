@@ -50,7 +50,7 @@ const Definition: FunctionComponent = () => {
           trigger: containerEl,
           start: 'top center',
         },
-        delay: 0.4
+        delay: 0.2
       })
 
       let type = gsap.from(typeEl, {
@@ -60,7 +60,7 @@ const Definition: FunctionComponent = () => {
           trigger: containerEl,
           start: 'top center',
         },
-        delay: 0.5
+        delay: 0.3
       })
 
       let description = gsap.from(descriptionEl, {
@@ -70,7 +70,7 @@ const Definition: FunctionComponent = () => {
           trigger: containerEl,
           start: 'top center',
         },
-        delay: 0.7
+        delay: 0.4
       })
 
       return () => {
