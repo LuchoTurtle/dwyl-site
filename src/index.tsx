@@ -27,9 +27,7 @@ function App() {
 
       <MVP />
 
-      <div className="mt-40">
-        <Steps />
-      </div>
+      <Steps />
 
       <div className="mt-40">
         <div className="mr-6 ml-6 sm:mr-[15%] sm:ml-[15%] text-center">
