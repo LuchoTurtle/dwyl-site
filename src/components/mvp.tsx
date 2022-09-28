@@ -69,7 +69,7 @@ const MVP: FunctionComponent = () => {
   }, [])
 
   return (
-    <div className="md:pt-52 lg:pt-[150vh]" ref={containerRef}>
+    <div className="pt-40 md:pt-52 lg:pt-[150vh]" ref={containerRef}>
       <div className="text-center text-xl font-bold text-gray-700 md:text-4xl">
         <span>we </span>
         <span>can</span>
