@@ -103,14 +103,46 @@ const SliderCarousel: FunctionComponent = () => {
 // Layered pinning components (this is for desktop devices only)
 const PinningLayers: FunctionComponent = () => {
   //https://codepen.io/GreenSock/pen/KKpLdWW
-  return <div>bruh</div>
+
+  const step0Ref = useRef(null)
+  const step1Ref = useRef(null)
+  const step2Ref = useRef(null)
+
+
+  useLayoutEffect(() => {
+    const step0El = step0Ref.current
+    const step1El = step1Ref.current
+    const step2El = step2Ref.current
+
+    const array = [step0El, step1El, step2El]
+
+    ScrollTrigger.create({
+      trigger: step0El,
+      start: "top top", 
+      pin: true,
+      markers: true,
+    });
+  }, [])
+  
+  return (
+    <div>
+      <section className="h-screen bg-orange-600" ref={step0Ref}>
+        ONE
+      </section>
+    </div>
+
+  )
 }
 
-const Steps: FunctionComponent = () => {
+//https://greensock.com/docs/v3/Plugins/ScrollTrigger
+//problema está no pinspacing e o parent estar a usar flex
+
+export const StepsTitle: FunctionComponent = () => {
   const containerRef = useRef(null)
   const titleRef = useRef(null)
-
+  
   const isDesktop = useMediaQuery('(min-width: 1024px)')
+
 
   useLayoutEffect(() => {
     if (isDesktop) {
@@ -126,12 +158,12 @@ const Steps: FunctionComponent = () => {
           scrub: true,
           pin: true,
           start: 'top top',
-          end: `+=${sectionHeight}%`,
-          markers: true
+          end: `+=${sectionHeight}%`
         },
         opacity: 1
       })
 
+      // Fade in and fade ou
       let fade = ScrollTrigger.create({
         trigger: containerEl,
         start: 'top top',
@@ -171,11 +203,9 @@ const Steps: FunctionComponent = () => {
     }
   }, [])
 
-  // para título em desktop
-  // https://codepen.io/GreenSock/pen/bGVjLwG
   return (
-    <div className="mt-40  lg:mt-[50vh]" ref={containerRef}>
-      <div className="mb-5 flex w-full flex-col justify-center pl-10 pr-10 text-center lg:h-screen">
+    <div className="mt-40 lg:mt-[50vh]" >
+      <div className="mb-5 flex w-full flex-col justify-center pl-10 pr-10 text-center lg:h-screen" ref={containerRef}>
         <div ref={titleRef} className="opacity-100 lg:opacity-0">
           <h1 className="bg-gradient-to-r from-[#009FFF] to-[#EC2F4B] bg-clip-text text-3xl font-semibold text-transparent md:text-5xl md:leading-[1.3]">
             the right solution
@@ -188,10 +218,18 @@ const Steps: FunctionComponent = () => {
           </p>
         </div>
       </div>
+    </div>
 
+  )
+}
+
+export const StepsTimeline: FunctionComponent = () => {
+  const isDesktop = useMediaQuery('(min-width: 1024px)')
+  return (
+    <div>
       {isDesktop ? <PinningLayers /> : <SliderCarousel />}
     </div>
   )
 }
 
-export default Steps
+

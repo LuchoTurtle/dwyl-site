@@ -1,7 +1,7 @@
 import Definition from 'components/definition'
 import Hero from 'components/hero'
 import MVP from 'components/mvp'
-import Steps from 'components/steps'
+import {StepsTimeline, StepsTitle} from 'components/steps'
 import Values from 'components/values'
 import Portfolio from 'components/portfolio'
 import OpenSource from 'components/open_source'
@@ -27,7 +27,9 @@ function App() {
 
       <MVP />
 
-      <Steps />
+      <StepsTitle />
+      
+      <StepsTimeline />
 
       <div className="mt-40">
         <div className="mr-6 ml-6 sm:mr-[15%] sm:ml-[15%] text-center">
