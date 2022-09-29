@@ -102,12 +102,10 @@ const SliderCarousel: FunctionComponent = () => {
 
 // Layered pinning components (this is for desktop devices only)
 const PinningLayers: FunctionComponent = () => {
-  //https://codepen.io/GreenSock/pen/KKpLdWW
 
   const step0Ref = useRef(null)
   const step1Ref = useRef(null)
   const step2Ref = useRef(null)
-  const step3Ref = useRef(null)
 
   const contentContainerRef = useRef(null)
   const title0Ref = useRef(null)
@@ -124,6 +122,16 @@ const PinningLayers: FunctionComponent = () => {
   const imageRef3 = useRef(null)
 
   useLayoutEffect(() => {
+
+    const textScrollTriggerTemplate = (triggerEl: any) => {
+      return {
+        trigger: triggerEl,
+        scrub: true,
+        start: 'top bottom',
+        end: 'top top',
+      }
+    }
+
     // Elements --------------------------
     // Content on top
     const contentContainerEl = contentContainerRef.current
@@ -140,13 +148,11 @@ const PinningLayers: FunctionComponent = () => {
     const image0El = imageRef0.current
     const image1El = imageRef1.current
     const image2El = imageRef2.current
-    const image3El = imageRef3.current
 
     // Background section refs
     const step0El = step0Ref.current
     const step1El = step1Ref.current
     const step2El = step2Ref.current
-    const step3El = step3Ref.current
 
     // Animations -------------------------
     // Extending and pinning the container on top
@@ -159,184 +165,49 @@ const PinningLayers: FunctionComponent = () => {
     })
 
     // Texts
-    let title0Out = gsap.to(title0El, {
-      scrollTrigger: {
-        trigger: step0El,
-        scrub: true,
-        start: 'top bottom',
-        end: 'top top',
-      },
-      yPercent: -200
-    })
+    let title0Out = gsap.to(title0El, {scrollTrigger: textScrollTriggerTemplate(step0El), yPercent: -200})
+    let description0Out = gsap.to(description0El, {scrollTrigger: textScrollTriggerTemplate(step0El), yPercent: -200})
 
-    let description0Out = gsap.to(description0El, {
-      scrollTrigger: {
-        trigger: step0El,
-        scrub: true,
-        start: 'top bottom',
-        end: 'top top',
-      },
-      yPercent: -200
-    })
+    let title1In = gsap.to(title1El, {scrollTrigger: textScrollTriggerTemplate(step0El), y: 0, yPercent: 0, opacity: 1})
+    let description1In = gsap.to(description1El, {scrollTrigger: textScrollTriggerTemplate(step0El), y: 0, yPercent: 0, opacity: 1 })
+    
+    let title1Out = gsap.to(title1El, {scrollTrigger: textScrollTriggerTemplate(step1El), yPercent: -200})
+    let description1Out = gsap.to(description1El, {scrollTrigger: textScrollTriggerTemplate(step1El), yPercent: -200})
 
-    let title1In = gsap.to(title1El, {
-      scrollTrigger: {
-        trigger: step0El,
-        scrub: true,
-        start: 'top bottom',
-        end: 'top top',
-      },
-      y: 0,
-      yPercent: 0,
-      opacity: 1,
-    })
+    let title2In = gsap.to(title2El, {scrollTrigger: textScrollTriggerTemplate(step1El), y: 0, yPercent: 0, opacity: 1})
+    let description2In = gsap.to(description2El, {scrollTrigger: textScrollTriggerTemplate(step1El), y: 0, yPercent: 0, opacity: 1 })
 
-    let description1In = gsap.to(description1El, {
-      scrollTrigger: {
-        trigger: step0El,
-        scrub: true,
-        start: 'top bottom',
-        end: 'top top',
-      },
-      y: 0,
-      yPercent: 0,
-      opacity: 1
-    })
+    let title2Out = gsap.to(title2El, {scrollTrigger: textScrollTriggerTemplate(step2El), yPercent: -200})
+    let description2Out = gsap.to(description2El, {scrollTrigger: textScrollTriggerTemplate(step2El), yPercent: -200})
 
-    let title1Out = gsap.to(title1El, {
-      scrollTrigger: {
-        trigger: step1El,
-        scrub: true,
-        start: 'top bottom',
-        end: 'top top',
-        immediateRender: false,
-      },
-      yPercent: -200,
-    })
+    let title3In = gsap.to(title3El, {scrollTrigger: textScrollTriggerTemplate(step2El), y: 0, yPercent: 0, opacity: 1})
+    let description3In = gsap.to(description3El, {scrollTrigger: textScrollTriggerTemplate(step2El), y: 0, yPercent: 0, opacity: 1 })
 
-    let description1Out = gsap.to(description1El, {
-      scrollTrigger: {
-        trigger: step1El,
-        scrub: true,
-        start: 'top bottom',
-        end: 'top top',
-        immediateRender: false,
-      },
-      yPercent: -200,
-    })
-
-    let title2In = gsap.to(title2El, {
-      scrollTrigger: {
-        trigger: step1El,
-        scrub: true,
-        start: 'top bottom',
-        end: 'top top',
-      },
-      y: 0,
-      yPercent: 0,
-      opacity: 1,
-    })
-
-    let description2In = gsap.to(description2El, {
-      scrollTrigger: {
-        trigger: step1El,
-        scrub: true,
-        start: 'top bottom',
-        end: 'top top',
-      },
-      y: 0,
-      yPercent: 0,
-      opacity: 1
-    })
-
-    let title2Out = gsap.to(title2El, {
-      scrollTrigger: {
-        trigger: step2El,
-        scrub: true,
-        start: 'top bottom',
-        end: 'top top',
-        immediateRender: false,
-      },
-      yPercent: -200,
-    })
-
-    let description2Out = gsap.to(description2El, {
-      scrollTrigger: {
-        trigger: step2El,
-        scrub: true,
-        start: 'top bottom',
-        end: 'top top',
-        immediateRender: false,
-      },
-      yPercent: -200,
-    })
-
-    let title3In = gsap.to(title3El, {
-      scrollTrigger: {
-        trigger: step2El,
-        scrub: true,
-        start: 'top bottom',
-        end: 'top top',
-      },
-      y: 0,
-      yPercent: 0,
-      opacity: 1,
-    })
-
-    let description3In = gsap.to(description3El, {
-      scrollTrigger: {
-        trigger: step2El,
-        scrub: true,
-        start: 'top bottom',
-        end: 'top top',
-      },
-      y: 0,
-      yPercent: 0,
-      opacity: 1
-    })
 
     // Images
-    let step0Begin = gsap.to(image0El, {
-      scrollTrigger: {
-        trigger: step0El,
-        scrub: true,
-        start: 'top bottom',
-        end: 'top top'
-      },
-      opacity: 0
-    })
-
-    let step1Begin = gsap.to(image1El, {
-      scrollTrigger: {
-        trigger: step1El,
-        scrub: true,
-        start: 'top bottom',
-        end: 'top top',
-      },
-      opacity: 0
-    })
-
-    let step2Begin = gsap.to(image2El, {
-      scrollTrigger: {
-        trigger: step2El,
-        scrub: true,
-        start: 'top bottom',
-        end: 'top top',
-      },
-      opacity: 0
-    })
+    let step0Image = gsap.to(image0El,{scrollTrigger: textScrollTriggerTemplate(step0El), opacity: 0})
+    let step1Image = gsap.to(image1El,{scrollTrigger: textScrollTriggerTemplate(step1El), opacity: 0})
+    let step2Image = gsap.to(image2El,{scrollTrigger: textScrollTriggerTemplate(step2El), opacity: 0})
 
     return () => {
       scroll.kill()
-      step0Begin.kill()
-      step1Begin.kill()
-      step2Begin.kill()
+
       title0Out.kill()
       description0Out.kill()
       title1In.kill()
       description1In.kill()
       title1Out.kill()
       description1Out.kill()
+      title2In.kill()
+      description2In.kill()
+      title2Out.kill()
+      description2Out.kill()
+      title3In.kill()
+      description3In.kill()
+
+      step0Image.kill()
+      step1Image.kill()
+      step2Image.kill()
     }
   }, [])
 
