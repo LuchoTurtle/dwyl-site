@@ -107,42 +107,129 @@ const PinningLayers: FunctionComponent = () => {
   const step0Ref = useRef(null)
   const step1Ref = useRef(null)
   const step2Ref = useRef(null)
+  const step3Ref = useRef(null)
 
+  const contentContainerRef = useRef(null)
+  const textRef = useRef(null)
+  const imageRef0 = useRef(null)
+  const imageRef1 = useRef(null)
+  const imageRef2 = useRef(null)
+  const imageRef3 = useRef(null)
 
   useLayoutEffect(() => {
+    // Content on top
+    const contentContainerEl = contentContainerRef.current
+    const textEl0 = textRef.current
+    const image0El = imageRef0.current
+    const image1El = imageRef1.current
+    const image2El = imageRef2.current
+    const image3El = imageRef3.current
+
+    // Background section refs
     const step0El = step0Ref.current
     const step1El = step1Ref.current
     const step2El = step2Ref.current
+    const step3El = step3Ref.current
 
-    const array = [step0El, step1El, step2El]
-
-    ScrollTrigger.create({
-      trigger: step0El,
+    // Extending and pinning the container on top
+    let scroll = ScrollTrigger.create({
+      trigger: contentContainerEl,
       start: "top top", 
+      end: `+=600%`,      // each section has 200vh so it must be the sum of every section
+      pinSpacing: false,
       pin: true,
-      markers: true,
     });
+
+    // Image change between steps
+    let step0Begin = gsap.to(image0El, {
+      scrollTrigger: {
+        trigger: step0El,
+        scrub: true,
+        start: 'top bottom',
+        end: 'top top',
+        markers: true,
+      },
+      opacity: 0,
+    })
+
+    let step1Begin = gsap.to(image1El, {
+      scrollTrigger: {
+        trigger: step1El,
+        scrub: true,
+        start: 'top bottom',
+        end: 'top top',
+        markers: true,
+      },
+      opacity: 0,
+    })
+
+    
+    let step2Begin = gsap.to(image2El, {
+      scrollTrigger: {
+        trigger: step2El,
+        scrub: true,
+        start: 'top bottom',
+        end: 'top top',
+        markers: true,
+      },
+      opacity: 0,
+    })
+
+
+    return () => {
+      scroll.kill()
+      step0Begin.kill()
+      step1Begin.kill()
+      step2Begin.kill()
+    }
+    
   }, [])
-  
+
+
   return (
     <div>
-      <section className="h-screen bg-orange-600" ref={step0Ref}>
-        ONE
-      </section>
-    </div>
+      <div className="z-10 flex h-screen w-screen flex-row" ref={contentContainerRef}>
+        <div className='z-[14] absolute flex h-full w-full'>
+          <div className='flex-1 flex flex-col justify-center items-start pl-12 pr-12' ref={textRef}>
+            <h4 className="text-2xl font-bold text-emerald-900">0. we get you to the finish line</h4>
+            <p className="text-xl font-medium text-[#DA6844]">you have a vision for your product and we are here to make it a reality</p>
+          </div>
+          <img src={step0_img} className="h-auto w-1/2 object-contain pl-12 pr-12" ref={imageRef0}/>
+        </div>
 
+        <div className='z-[13] absolute flex h-full w-full'>
+          <div className='flex-1 flex flex-col justify-center items-start pl-12 pr-12'>
+          </div>
+          <img src={step1_img} className="h-auto w-1/2 object-contain pl-12 pr-12" ref={imageRef1}/>
+        </div>
+
+        <div className='z-[12] absolute flex h-full w-full'>
+          <div className='flex-1 flex flex-col justify-center items-start pl-12 pr-12'>
+          </div>
+          <img src={step2_img} className="h-auto w-1/2 object-contain pl-12 pr-12" ref={imageRef2}/>
+        </div>
+
+        <div className='z-[11] absolute flex h-full w-full'>
+          <div className='flex-1 flex flex-col justify-center items-start pl-12 pr-12'>
+          </div>
+          <img src={step3_img} className="h-auto w-1/2 object-contain pl-12 pr-12" ref={imageRef3}/>
+        </div>
+      </div>
+
+      <div>
+        <section className="z-0 h-[200vh] bg-[#27292F]" ref={step0Ref}  />
+        <section className="z-0 h-[200vh] bg-[#FAF3BE]" ref={step1Ref} />
+        <section className="z-0 h-[200vh] bg-[#D9FFFC]" ref={step2Ref} />
+      </div>
+    </div>
   )
 }
-
-//https://greensock.com/docs/v3/Plugins/ScrollTrigger
-//problema está no pinspacing e o parent estar a usar flex
 
 export const StepsTitle: FunctionComponent = () => {
   const containerRef = useRef(null)
   const titleRef = useRef(null)
-  
-  const isDesktop = useMediaQuery('(min-width: 1024px)')
 
+  const isDesktop = useMediaQuery('(min-width: 1024px)')
 
   useLayoutEffect(() => {
     if (isDesktop) {
@@ -204,8 +291,11 @@ export const StepsTitle: FunctionComponent = () => {
   }, [])
 
   return (
-    <div className="mt-40 lg:mt-[50vh]" >
-      <div className="mb-5 flex w-full flex-col justify-center pl-10 pr-10 text-center lg:h-screen" ref={containerRef}>
+    <div className="mt-40 lg:mt-[50vh]">
+      <div
+        className="mb-5 flex w-full flex-col justify-center pl-10 pr-10 text-center lg:h-screen"
+        ref={containerRef}
+      >
         <div ref={titleRef} className="opacity-100 lg:opacity-0">
           <h1 className="bg-gradient-to-r from-[#009FFF] to-[#EC2F4B] bg-clip-text text-3xl font-semibold text-transparent md:text-5xl md:leading-[1.3]">
             the right solution
@@ -219,17 +309,10 @@ export const StepsTitle: FunctionComponent = () => {
         </div>
       </div>
     </div>
-
   )
 }
 
 export const StepsTimeline: FunctionComponent = () => {
   const isDesktop = useMediaQuery('(min-width: 1024px)')
-  return (
-    <div>
-      {isDesktop ? <PinningLayers /> : <SliderCarousel />}
-    </div>
-  )
+  return <div>{isDesktop ? <PinningLayers /> : <SliderCarousel />}</div>
 }
-
-

@@ -14,7 +14,7 @@ const root = createRoot(container)
 
 function App() {
   return (
-    <div className="bg-white font-montserrat">
+    <div className="overflow-x-hidden bg-white font-montserrat">
       <Hero />
 
       <div className="mt-40">
