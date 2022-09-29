@@ -110,16 +110,33 @@ const PinningLayers: FunctionComponent = () => {
   const step3Ref = useRef(null)
 
   const contentContainerRef = useRef(null)
-  const textRef = useRef(null)
+  const title0Ref = useRef(null)
+  const description0Ref = useRef(null)
+  const title1Ref = useRef(null)
+  const description1Ref = useRef(null)
+  const title2Ref = useRef(null)
+  const description2Ref = useRef(null)
+  const title3Ref = useRef(null)
+  const description3Ref = useRef(null)
   const imageRef0 = useRef(null)
   const imageRef1 = useRef(null)
   const imageRef2 = useRef(null)
   const imageRef3 = useRef(null)
 
   useLayoutEffect(() => {
+    // Elements --------------------------
     // Content on top
     const contentContainerEl = contentContainerRef.current
-    const textEl0 = textRef.current
+
+    const title0El = title0Ref.current
+    const description0El = description0Ref.current
+    const title1El = title1Ref.current
+    const description1El = description1Ref.current
+    const title2El = title2Ref.current
+    const description2El = description2Ref.current
+    const title3El = title3Ref.current
+    const description3El = description3Ref.current
+
     const image0El = imageRef0.current
     const image1El = imageRef1.current
     const image2El = imageRef2.current
@@ -131,25 +148,162 @@ const PinningLayers: FunctionComponent = () => {
     const step2El = step2Ref.current
     const step3El = step3Ref.current
 
+    // Animations -------------------------
     // Extending and pinning the container on top
     let scroll = ScrollTrigger.create({
       trigger: contentContainerEl,
-      start: "top top", 
-      end: `+=600%`,      // each section has 200vh so it must be the sum of every section
+      start: 'top top',
+      end: `+=600%`, // each section has 200vh so it must be the sum of every section
       pinSpacing: false,
-      pin: true,
-    });
+      pin: true
+    })
 
-    // Image change between steps
-    let step0Begin = gsap.to(image0El, {
+    // Texts
+    let title0Out = gsap.to(title0El, {
       scrollTrigger: {
         trigger: step0El,
         scrub: true,
         start: 'top bottom',
         end: 'top top',
-        markers: true,
       },
-      opacity: 0,
+      yPercent: -200
+    })
+
+    let description0Out = gsap.to(description0El, {
+      scrollTrigger: {
+        trigger: step0El,
+        scrub: true,
+        start: 'top bottom',
+        end: 'top top',
+      },
+      yPercent: -200
+    })
+
+    let title1In = gsap.to(title1El, {
+      scrollTrigger: {
+        trigger: step0El,
+        scrub: true,
+        start: 'top bottom',
+        end: 'top top',
+      },
+      y: 0,
+      yPercent: 0,
+      opacity: 1,
+    })
+
+    let description1In = gsap.to(description1El, {
+      scrollTrigger: {
+        trigger: step0El,
+        scrub: true,
+        start: 'top bottom',
+        end: 'top top',
+      },
+      y: 0,
+      yPercent: 0,
+      opacity: 1
+    })
+
+    let title1Out = gsap.to(title1El, {
+      scrollTrigger: {
+        trigger: step1El,
+        scrub: true,
+        start: 'top bottom',
+        end: 'top top',
+        immediateRender: false,
+      },
+      yPercent: -200,
+    })
+
+    let description1Out = gsap.to(description1El, {
+      scrollTrigger: {
+        trigger: step1El,
+        scrub: true,
+        start: 'top bottom',
+        end: 'top top',
+        immediateRender: false,
+      },
+      yPercent: -200,
+    })
+
+    let title2In = gsap.to(title2El, {
+      scrollTrigger: {
+        trigger: step1El,
+        scrub: true,
+        start: 'top bottom',
+        end: 'top top',
+      },
+      y: 0,
+      yPercent: 0,
+      opacity: 1,
+    })
+
+    let description2In = gsap.to(description2El, {
+      scrollTrigger: {
+        trigger: step1El,
+        scrub: true,
+        start: 'top bottom',
+        end: 'top top',
+      },
+      y: 0,
+      yPercent: 0,
+      opacity: 1
+    })
+
+    let title2Out = gsap.to(title2El, {
+      scrollTrigger: {
+        trigger: step2El,
+        scrub: true,
+        start: 'top bottom',
+        end: 'top top',
+        immediateRender: false,
+      },
+      yPercent: -200,
+    })
+
+    let description2Out = gsap.to(description2El, {
+      scrollTrigger: {
+        trigger: step2El,
+        scrub: true,
+        start: 'top bottom',
+        end: 'top top',
+        immediateRender: false,
+      },
+      yPercent: -200,
+    })
+
+    let title3In = gsap.to(title3El, {
+      scrollTrigger: {
+        trigger: step2El,
+        scrub: true,
+        start: 'top bottom',
+        end: 'top top',
+      },
+      y: 0,
+      yPercent: 0,
+      opacity: 1,
+    })
+
+    let description3In = gsap.to(description3El, {
+      scrollTrigger: {
+        trigger: step2El,
+        scrub: true,
+        start: 'top bottom',
+        end: 'top top',
+      },
+      y: 0,
+      yPercent: 0,
+      opacity: 1
+    })
+
+    // Images
+    let step0Begin = gsap.to(image0El, {
+      scrollTrigger: {
+        trigger: step0El,
+        scrub: true,
+        start: 'top bottom',
+        end: 'top top'
+      },
+      opacity: 0
     })
 
     let step1Begin = gsap.to(image1El, {
@@ -158,66 +312,128 @@ const PinningLayers: FunctionComponent = () => {
         scrub: true,
         start: 'top bottom',
         end: 'top top',
-        markers: true,
       },
-      opacity: 0,
+      opacity: 0
     })
 
-    
     let step2Begin = gsap.to(image2El, {
       scrollTrigger: {
         trigger: step2El,
         scrub: true,
         start: 'top bottom',
         end: 'top top',
-        markers: true,
       },
-      opacity: 0,
+      opacity: 0
     })
-
 
     return () => {
       scroll.kill()
       step0Begin.kill()
       step1Begin.kill()
       step2Begin.kill()
+      title0Out.kill()
+      description0Out.kill()
+      title1In.kill()
+      description1In.kill()
+      title1Out.kill()
+      description1Out.kill()
     }
-    
   }, [])
-
 
   return (
     <div>
-      <div className="z-10 flex h-screen w-screen flex-row" ref={contentContainerRef}>
-        <div className='z-[14] absolute flex h-full w-full'>
-          <div className='flex-1 flex flex-col justify-center items-start pl-12 pr-12' ref={textRef}>
-            <h4 className="text-2xl font-bold text-emerald-900">0. we get you to the finish line</h4>
-            <p className="text-xl font-medium text-[#DA6844]">you have a vision for your product and we are here to make it a reality</p>
+      <div
+        className="z-10 flex h-screen w-screen flex-row"
+        ref={contentContainerRef}
+      >
+        <div className="absolute z-[14] flex h-full w-full">
+          <div className="flex flex-1 flex-col items-start justify-center pl-12 pr-12">
+            <div className="overflow-hidden text-2xl font-bold text-emerald-900">
+              <span className="block" ref={title0Ref}>
+                0. we get you to the finish line
+              </span>
+            </div>
+            <div className="overflow-hidden text-xl font-medium text-[#DA6844]">
+              <span className="block" ref={description0Ref}>
+                you have a vision for your product and we are here to make it a
+                reality
+              </span>
+            </div>
           </div>
-          <img src={step0_img} className="h-auto w-1/2 object-contain pl-12 pr-12" ref={imageRef0}/>
+          <img
+            src={step0_img}
+            className="h-auto w-1/2 object-contain pl-12 pr-12"
+            ref={imageRef0}
+          />
         </div>
 
-        <div className='z-[13] absolute flex h-full w-full'>
-          <div className='flex-1 flex flex-col justify-center items-start pl-12 pr-12'>
+        <div className="absolute z-[13] flex h-full w-full">
+          <div className="flex flex-1 flex-col items-start justify-center pl-12 pr-12">
+            <div className="overflow-hidden text-2xl font-bold text-white">
+              <span className="block translate-y-[100%] opacity-0" ref={title1Ref}>
+                1. understanding the problem
+              </span>
+            </div>
+            <div className="overflow-hidden text-xl font-medium text-[#DA6844]">
+              <span className="block translate-y-[100%] opacity-0" ref={description1Ref}>
+                we work together to understand the identified problem and
+                confirm the intended users feel the pain and need for a
+                solution.
+              </span>
+            </div>
           </div>
-          <img src={step1_img} className="h-auto w-1/2 object-contain pl-12 pr-12" ref={imageRef1}/>
+          <img
+            src={step1_img}
+            className="h-auto w-1/2 object-contain pl-12 pr-12"
+            ref={imageRef1}
+          />
         </div>
 
-        <div className='z-[12] absolute flex h-full w-full'>
-          <div className='flex-1 flex flex-col justify-center items-start pl-12 pr-12'>
+        <div className="absolute z-[12] flex h-full w-full">
+          <div className="flex flex-1 flex-col items-start justify-center pl-12 pr-12">
+            <div className="overflow-hidden text-2xl font-bold text-[#27292F]">
+              <span className="block translate-y-[100%] opacity-0" ref={title2Ref}>
+              2. make the next market-ready version of the solution
+              </span>
+            </div>
+            <div className="overflow-hidden text-xl font-medium text-[#DA6844]">
+              <span className="block translate-y-[100%] opacity-0" ref={description2Ref}>
+              we work together to understand the identified problem and confirm
+              the intended users feel the pain and need for a solution.
+              </span>
+            </div>
           </div>
-          <img src={step2_img} className="h-auto w-1/2 object-contain pl-12 pr-12" ref={imageRef2}/>
+          <img
+            src={step2_img}
+            className="h-auto w-1/2 object-contain pl-12 pr-12"
+            ref={imageRef2}
+          />
         </div>
 
-        <div className='z-[11] absolute flex h-full w-full'>
-          <div className='flex-1 flex flex-col justify-center items-start pl-12 pr-12'>
+        <div className="absolute z-[11] flex h-full w-full">
+          <div className="flex flex-1 flex-col items-start justify-center pl-12 pr-12">
+            <div className="overflow-hidden text-2xl font-bold text-[#27292F]">
+              <span className="block translate-y-[100%] opacity-0" ref={title3Ref}>
+              3. review and return to step one
+              </span>
+            </div>
+            <div className="overflow-hidden text-xl font-medium text-[#DA6844]">
+              <span className="block translate-y-[100%] opacity-0" ref={description3Ref}>
+              we review all feedback and confirm we are making progress toward
+              solving the problem.
+              </span>
+            </div>
           </div>
-          <img src={step3_img} className="h-auto w-1/2 object-contain pl-12 pr-12" ref={imageRef3}/>
+          <img
+            src={step3_img}
+            className="h-auto w-1/2 object-contain pl-12 pr-12"
+            ref={imageRef3}
+          />
         </div>
       </div>
 
       <div>
-        <section className="z-0 h-[200vh] bg-[#27292F]" ref={step0Ref}  />
+        <section className="z-0 h-[200vh] bg-[#27292F]" ref={step0Ref} />
         <section className="z-0 h-[200vh] bg-[#FAF3BE]" ref={step1Ref} />
         <section className="z-0 h-[200vh] bg-[#D9FFFC]" ref={step2Ref} />
       </div>
