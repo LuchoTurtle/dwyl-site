@@ -102,7 +102,6 @@ const SliderCarousel: FunctionComponent = () => {
 
 // Layered pinning components (this is for desktop devices only)
 const PinningLayers: FunctionComponent = () => {
-
   const step0Ref = useRef(null)
   const step1Ref = useRef(null)
   const step2Ref = useRef(null)
@@ -122,13 +121,12 @@ const PinningLayers: FunctionComponent = () => {
   const imageRef3 = useRef(null)
 
   useLayoutEffect(() => {
-
     const textScrollTriggerTemplate = (triggerEl: any) => {
       return {
         trigger: triggerEl,
         scrub: true,
         start: 'top bottom',
-        end: 'top top',
+        end: 'top top'
       }
     }
 
@@ -165,29 +163,85 @@ const PinningLayers: FunctionComponent = () => {
     })
 
     // Texts
-    let title0Out = gsap.to(title0El, {scrollTrigger: textScrollTriggerTemplate(step0El), yPercent: -200})
-    let description0Out = gsap.to(description0El, {scrollTrigger: textScrollTriggerTemplate(step0El), yPercent: -200})
+    let title0Out = gsap.to(title0El, {
+      scrollTrigger: textScrollTriggerTemplate(step0El),
+      yPercent: -200
+    })
+    let description0Out = gsap.to(description0El, {
+      scrollTrigger: textScrollTriggerTemplate(step0El),
+      yPercent: -200
+    })
 
-    let title1In = gsap.to(title1El, {scrollTrigger: textScrollTriggerTemplate(step0El), y: 0, yPercent: 0, opacity: 1})
-    let description1In = gsap.to(description1El, {scrollTrigger: textScrollTriggerTemplate(step0El), y: 0, yPercent: 0, opacity: 1 })
-    
-    let title1Out = gsap.to(title1El, {scrollTrigger: textScrollTriggerTemplate(step1El), yPercent: -200})
-    let description1Out = gsap.to(description1El, {scrollTrigger: textScrollTriggerTemplate(step1El), yPercent: -200})
+    let title1In = gsap.to(title1El, {
+      scrollTrigger: textScrollTriggerTemplate(step0El),
+      y: 0,
+      yPercent: 0,
+      opacity: 1
+    })
+    let description1In = gsap.to(description1El, {
+      scrollTrigger: textScrollTriggerTemplate(step0El),
+      y: 0,
+      yPercent: 0,
+      opacity: 1
+    })
 
-    let title2In = gsap.to(title2El, {scrollTrigger: textScrollTriggerTemplate(step1El), y: 0, yPercent: 0, opacity: 1})
-    let description2In = gsap.to(description2El, {scrollTrigger: textScrollTriggerTemplate(step1El), y: 0, yPercent: 0, opacity: 1 })
+    let title1Out = gsap.to(title1El, {
+      scrollTrigger: textScrollTriggerTemplate(step1El),
+      yPercent: -200
+    })
+    let description1Out = gsap.to(description1El, {
+      scrollTrigger: textScrollTriggerTemplate(step1El),
+      yPercent: -200
+    })
 
-    let title2Out = gsap.to(title2El, {scrollTrigger: textScrollTriggerTemplate(step2El), yPercent: -200})
-    let description2Out = gsap.to(description2El, {scrollTrigger: textScrollTriggerTemplate(step2El), yPercent: -200})
+    let title2In = gsap.to(title2El, {
+      scrollTrigger: textScrollTriggerTemplate(step1El),
+      y: 0,
+      yPercent: 0,
+      opacity: 1
+    })
+    let description2In = gsap.to(description2El, {
+      scrollTrigger: textScrollTriggerTemplate(step1El),
+      y: 0,
+      yPercent: 0,
+      opacity: 1
+    })
 
-    let title3In = gsap.to(title3El, {scrollTrigger: textScrollTriggerTemplate(step2El), y: 0, yPercent: 0, opacity: 1})
-    let description3In = gsap.to(description3El, {scrollTrigger: textScrollTriggerTemplate(step2El), y: 0, yPercent: 0, opacity: 1 })
+    let title2Out = gsap.to(title2El, {
+      scrollTrigger: textScrollTriggerTemplate(step2El),
+      yPercent: -200
+    })
+    let description2Out = gsap.to(description2El, {
+      scrollTrigger: textScrollTriggerTemplate(step2El),
+      yPercent: -200
+    })
 
+    let title3In = gsap.to(title3El, {
+      scrollTrigger: textScrollTriggerTemplate(step2El),
+      y: 0,
+      yPercent: 0,
+      opacity: 1
+    })
+    let description3In = gsap.to(description3El, {
+      scrollTrigger: textScrollTriggerTemplate(step2El),
+      y: 0,
+      yPercent: 0,
+      opacity: 1
+    })
 
     // Images
-    let step0Image = gsap.to(image0El,{scrollTrigger: textScrollTriggerTemplate(step0El), opacity: 0})
-    let step1Image = gsap.to(image1El,{scrollTrigger: textScrollTriggerTemplate(step1El), opacity: 0})
-    let step2Image = gsap.to(image2El,{scrollTrigger: textScrollTriggerTemplate(step2El), opacity: 0})
+    let step0Image = gsap.to(image0El, {
+      scrollTrigger: textScrollTriggerTemplate(step0El),
+      opacity: 0
+    })
+    let step1Image = gsap.to(image1El, {
+      scrollTrigger: textScrollTriggerTemplate(step1El),
+      opacity: 0
+    })
+    let step2Image = gsap.to(image2El, {
+      scrollTrigger: textScrollTriggerTemplate(step2El),
+      opacity: 0
+    })
 
     return () => {
       scroll.kill()
@@ -241,12 +295,18 @@ const PinningLayers: FunctionComponent = () => {
         <div className="absolute z-[13] flex h-full w-full">
           <div className="flex flex-1 flex-col items-start justify-center pl-12 pr-12">
             <div className="overflow-hidden text-2xl font-bold text-white">
-              <span className="block translate-y-[100%] opacity-0" ref={title1Ref}>
+              <span
+                className="block translate-y-[100%] opacity-0"
+                ref={title1Ref}
+              >
                 1. understanding the problem
               </span>
             </div>
             <div className="overflow-hidden text-xl font-medium text-[#DA6844]">
-              <span className="block translate-y-[100%] opacity-0" ref={description1Ref}>
+              <span
+                className="block translate-y-[100%] opacity-0"
+                ref={description1Ref}
+              >
                 we work together to understand the identified problem and
                 confirm the intended users feel the pain and need for a
                 solution.
@@ -263,14 +323,21 @@ const PinningLayers: FunctionComponent = () => {
         <div className="absolute z-[12] flex h-full w-full">
           <div className="flex flex-1 flex-col items-start justify-center pl-12 pr-12">
             <div className="overflow-hidden text-2xl font-bold text-[#27292F]">
-              <span className="block translate-y-[100%] opacity-0" ref={title2Ref}>
-              2. make the next market-ready version of the solution
+              <span
+                className="block translate-y-[100%] opacity-0"
+                ref={title2Ref}
+              >
+                2. make the next market-ready version of the solution
               </span>
             </div>
             <div className="overflow-hidden text-xl font-medium text-[#DA6844]">
-              <span className="block translate-y-[100%] opacity-0" ref={description2Ref}>
-              we work together to understand the identified problem and confirm
-              the intended users feel the pain and need for a solution.
+              <span
+                className="block translate-y-[100%] opacity-0"
+                ref={description2Ref}
+              >
+                we work together to understand the identified problem and
+                confirm the intended users feel the pain and need for a
+                solution.
               </span>
             </div>
           </div>
@@ -284,14 +351,20 @@ const PinningLayers: FunctionComponent = () => {
         <div className="absolute z-[11] flex h-full w-full">
           <div className="flex flex-1 flex-col items-start justify-center pl-12 pr-12">
             <div className="overflow-hidden text-2xl font-bold text-[#27292F]">
-              <span className="block translate-y-[100%] opacity-0" ref={title3Ref}>
-              3. review and return to step one
+              <span
+                className="block translate-y-[100%] opacity-0"
+                ref={title3Ref}
+              >
+                3. review and return to step one
               </span>
             </div>
             <div className="overflow-hidden text-xl font-medium text-[#DA6844]">
-              <span className="block translate-y-[100%] opacity-0" ref={description3Ref}>
-              we review all feedback and confirm we are making progress toward
-              solving the problem.
+              <span
+                className="block translate-y-[100%] opacity-0"
+                ref={description3Ref}
+              >
+                we review all feedback and confirm we are making progress toward
+                solving the problem.
               </span>
             </div>
           </div>
@@ -311,7 +384,6 @@ const PinningLayers: FunctionComponent = () => {
     </div>
   )
 }
-
 
 // Exported components
 export const StepsTitle: FunctionComponent = () => {
@@ -334,28 +406,28 @@ export const StepsTitle: FunctionComponent = () => {
           scrub: true,
           pin: true,
           start: 'top top',
-          end: `+=${sectionHeight}%`,
+          end: `+=${sectionHeight}%`
         },
         opacity: 1
       })
 
       // Fade in and fade out
-      let fade = gsap.timeline( { 
+      let fade = gsap.timeline({
         scrollTrigger: {
           trigger: containerEl,
-          start: "top top",
+          start: 'top top',
           end: `${sectionHeight}% top`,
           scrub: true,
-          toggleActions: "play reverse play reverse",
+          toggleActions: 'play reverse play reverse'
         }
-        
-      });
-      
-      // When scrubbing is set to true and we're using a timeline, 
+      })
+
+      // When scrubbing is set to true and we're using a timeline,
       // the durations of tweens within that animation serve as proportions for the total amount of distance
       // that the tween will play (https://greensock.com/forums/topic/25451-how-to-fade-in-and-fade-out-in-scrolltrigger/)
-      fade.to(titleEl, { opacity: 1, duration: 0.5 })
-          .to(titleEl, { opacity: 0, duration: 0.25 })
+      fade
+        .to(titleEl, { opacity: 1, duration: 0.5 })
+        .to(titleEl, { opacity: 0, duration: 0.25 })
 
       return () => {
         pin.kill()
@@ -366,30 +438,30 @@ export const StepsTitle: FunctionComponent = () => {
 
   return (
     <div className="mt-40 lg:mt-0">
-
-      {isDesktop ? 
-            
+      {isDesktop ? (
+        <div
+          className="flex h-auto w-screen flex-row lg:h-screen"
+          ref={containerRef}
+        >
+          <div className="absolute flex h-full w-full items-center justify-center">
             <div
-            className="flex h-auto lg:h-screen w-screen flex-row"
-            ref={containerRef}
-          >
-            <div className="absolute flex justify-center items-center h-full w-full">
-              <div ref={titleRef} className="opacity-100 lg:opacity-0 text-center">
-                <h1 className="bg-gradient-to-r from-[#009FFF] to-[#EC2F4B] bg-clip-text text-3xl font-semibold text-transparent md:text-5xl md:leading-[1.3]">
-                  the right solution
-                </h1>
-                <h2 className="text-xl font-semibold text-stone-700 md:text-3xl">
-                  (in 3 easy steps)
-                </h2>
-                <p className="mt-5 text-[9px] font-medium uppercase text-stone-500 md:text-xs">
-                  meet your needs quickly and without waste
-                </p>
-              </div>
+              ref={titleRef}
+              className="text-center opacity-100 lg:opacity-0"
+            >
+              <h1 className="bg-gradient-to-r from-[#009FFF] to-[#EC2F4B] bg-clip-text text-3xl font-semibold text-transparent md:text-5xl md:leading-[1.3]">
+                the right solution
+              </h1>
+              <h2 className="text-xl font-semibold text-stone-700 md:text-3xl">
+                (in 3 easy steps)
+              </h2>
+              <p className="mt-5 text-[9px] font-medium uppercase text-stone-500 md:text-xs">
+                meet your needs quickly and without waste
+              </p>
             </div>
           </div>
-
-          :
-          <div
+        </div>
+      ) : (
+        <div
           className="mb-5 flex w-full flex-col justify-center pl-10 pr-10 text-center lg:h-screen"
           ref={containerRef}
         >
@@ -405,9 +477,7 @@ export const StepsTitle: FunctionComponent = () => {
             </p>
           </div>
         </div>
-
-          }
-
+      )}
     </div>
   )
 }
