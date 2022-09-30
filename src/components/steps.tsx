@@ -312,6 +312,8 @@ const PinningLayers: FunctionComponent = () => {
   )
 }
 
+
+// Exported components
 export const StepsTitle: FunctionComponent = () => {
   const containerRef = useRef(null)
   const titleRef = useRef(null)
@@ -320,7 +322,7 @@ export const StepsTitle: FunctionComponent = () => {
 
   useLayoutEffect(() => {
     if (isDesktop) {
-      const sectionHeight = 350
+      const sectionHeight = 200
 
       const containerEl = containerRef.current
       const titleEl = titleRef.current
@@ -332,43 +334,28 @@ export const StepsTitle: FunctionComponent = () => {
           scrub: true,
           pin: true,
           start: 'top top',
-          end: `+=${sectionHeight}%`
+          end: `+=${sectionHeight}%`,
         },
         opacity: 1
       })
 
-      // Fade in and fade ou
-      let fade = ScrollTrigger.create({
-        trigger: containerEl,
-        start: 'top top',
-        end: `${sectionHeight - 50}% center`,
-        onLeave: () =>
-          gsap.to(titleEl, {
-            opacity: 0,
-            ease: 'power4.out',
-            immediateRender: false
-          }),
-        onEnterBack: () =>
-          gsap.to(titleEl, {
-            opacity: 1,
-            ease: 'power1.in',
-            immediateRender: false
-          }),
-        onEnter: () =>
-          gsap.to(titleEl, {
-            opacity: 1,
-            duration: 0.2,
-            ease: 'power1.in',
-            immediateRender: false
-          }),
-        onLeaveBack: () =>
-          gsap.to(titleEl, {
-            opacity: 0,
-            duration: 0.2,
-            ease: 'power4.in',
-            immediateRender: false
-          })
-      })
+      // Fade in and fade out
+      let fade = gsap.timeline( { 
+        scrollTrigger: {
+          trigger: containerEl,
+          start: "top top",
+          end: `${sectionHeight}% top`,
+          scrub: true,
+          toggleActions: "play reverse play reverse",
+        }
+        
+      });
+      
+      // When scrubbing is set to true and we're using a timeline, 
+      // the durations of tweens within that animation serve as proportions for the total amount of distance
+      // that the tween will play (https://greensock.com/forums/topic/25451-how-to-fade-in-and-fade-out-in-scrolltrigger/)
+      fade.to(titleEl, { opacity: 1, duration: 0.5 })
+          .to(titleEl, { opacity: 0, duration: 0.25 })
 
       return () => {
         pin.kill()
@@ -378,23 +365,49 @@ export const StepsTitle: FunctionComponent = () => {
   }, [])
 
   return (
-    <div className="mt-40 lg:mt-[50vh]">
-      <div
-        className="mb-5 flex w-full flex-col justify-center pl-10 pr-10 text-center lg:h-screen"
-        ref={containerRef}
-      >
-        <div ref={titleRef} className="opacity-100 lg:opacity-0">
-          <h1 className="bg-gradient-to-r from-[#009FFF] to-[#EC2F4B] bg-clip-text text-3xl font-semibold text-transparent md:text-5xl md:leading-[1.3]">
-            the right solution
-          </h1>
-          <h2 className="text-xl font-semibold text-stone-700 md:text-3xl">
-            (in 3 easy steps)
-          </h2>
-          <p className="mt-5 text-[9px] font-medium uppercase text-stone-500 md:text-xs">
-            meet your needs quickly and without waste
-          </p>
+    <div className="mt-40 lg:mt-0">
+
+      {isDesktop ? 
+            
+            <div
+            className="flex h-auto lg:h-screen w-screen flex-row"
+            ref={containerRef}
+          >
+            <div className="absolute flex justify-center items-center h-full w-full">
+              <div ref={titleRef} className="opacity-100 lg:opacity-0 text-center">
+                <h1 className="bg-gradient-to-r from-[#009FFF] to-[#EC2F4B] bg-clip-text text-3xl font-semibold text-transparent md:text-5xl md:leading-[1.3]">
+                  the right solution
+                </h1>
+                <h2 className="text-xl font-semibold text-stone-700 md:text-3xl">
+                  (in 3 easy steps)
+                </h2>
+                <p className="mt-5 text-[9px] font-medium uppercase text-stone-500 md:text-xs">
+                  meet your needs quickly and without waste
+                </p>
+              </div>
+            </div>
+          </div>
+
+          :
+          <div
+          className="mb-5 flex w-full flex-col justify-center pl-10 pr-10 text-center lg:h-screen"
+          ref={containerRef}
+        >
+          <div ref={titleRef} className="opacity-100 lg:opacity-0">
+            <h1 className="bg-gradient-to-r from-[#009FFF] to-[#EC2F4B] bg-clip-text text-3xl font-semibold text-transparent md:text-5xl md:leading-[1.3]">
+              the right solution
+            </h1>
+            <h2 className="text-xl font-semibold text-stone-700 md:text-3xl">
+              (in 3 easy steps)
+            </h2>
+            <p className="mt-5 text-[9px] font-medium uppercase text-stone-500 md:text-xs">
+              meet your needs quickly and without waste
+            </p>
+          </div>
         </div>
-      </div>
+
+          }
+
     </div>
   )
 }
