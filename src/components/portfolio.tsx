@@ -23,7 +23,7 @@ const Portfolio: FunctionComponent = () => {
               src={smg_img}
             />
 
-            <div className="relative p-6">
+            <div className="relative flex h-full flex-col p-6">
               <h4 className="text-2xl font-semibold text-white">
                 The Science Museum Group
               </h4>
@@ -31,17 +31,19 @@ const Portfolio: FunctionComponent = () => {
                 more than 250k artefacts, made accessible and searcheable.
               </p>
 
-              <button
-                type="button"
-                className="relative mt-16 inline-block h-10 max-h-full w-24 max-w-full cursor-pointer
+              <div className="mt-16 flex h-full flex-col justify-end">
+                <button
+                  type="button"
+                  className="relative inline-block h-10 max-h-full w-24 max-w-full cursor-pointer
                   rounded-full border border-white 
                   px-2.5 py-2.5 text-xs
                   leading-tight text-white transition 
                   duration-150 ease-in-out hover:bg-white hover:bg-opacity-10 hover:shadow-lg active:bg-white active:bg-opacity-50
                   active:shadow-lg"
-              >
-                visit site
-              </button>
+                >
+                  visit site
+                </button>
+              </div>
             </div>
           </div>
 
@@ -53,7 +55,7 @@ const Portfolio: FunctionComponent = () => {
               className="absolute translate-x-[95px] translate-y-[3px]  rotate-[344deg] opacity-30"
               src={ic_img}
             />
-            <div className="relative p-6">
+            <div className="relative flex h-full flex-col p-6">
               <h4 className="text-2xl font-semibold text-white">
                 Inclusive Classrooms
               </h4>
@@ -62,17 +64,19 @@ const Portfolio: FunctionComponent = () => {
                 really matters.
               </p>
 
-              <button
-                type="button"
-                className="relative mt-16 inline-block h-10 max-h-full w-24 max-w-full cursor-pointer
+              <div className="mt-16 flex h-full flex-col justify-end">
+                <button
+                  type="button"
+                  className="relative inline-block h-10 max-h-full w-24 max-w-full cursor-pointer
                   rounded-full border border-white 
                   px-2.5 py-2.5 text-xs
                   leading-tight text-white transition 
                   duration-150 ease-in-out hover:bg-white hover:bg-opacity-10 hover:shadow-lg active:bg-white active:bg-opacity-50
                   active:shadow-lg"
-              >
-                visit site
-              </button>
+                >
+                  visit site
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -86,7 +90,7 @@ const Portfolio: FunctionComponent = () => {
               className="absolute translate-x-[95px] translate-y-[40px]  rotate-[344deg] opacity-30"
               src={emf_img}
             />
-            <div className="relative p-6">
+            <div className="relative flex h-full flex-col p-6">
               <h4 className="text-2xl font-semibold text-white">
                 The Ellen MacArthur Foundation
               </h4>
@@ -95,17 +99,19 @@ const Portfolio: FunctionComponent = () => {
                 network.
               </p>
 
-              <button
-                type="button"
-                className="relative mt-16 inline-block h-10 max-h-full w-24 max-w-full cursor-pointer
+              <div className="mt-16 flex h-full flex-col justify-end">
+                <button
+                  type="button"
+                  className="relative inline-block h-10 max-h-full w-24 max-w-full cursor-pointer
                   rounded-full border border-white 
                   px-2.5 py-2.5 text-xs
                   leading-tight text-white transition 
                   duration-150 ease-in-out hover:bg-white hover:bg-opacity-10 hover:shadow-lg active:bg-white active:bg-opacity-50
                   active:shadow-lg"
-              >
-                visit site
-              </button>
+                >
+                  visit site
+                </button>
+              </div>
             </div>
           </div>
 
@@ -117,7 +123,7 @@ const Portfolio: FunctionComponent = () => {
               className="absolute translate-x-[-70px] translate-y-[10px]  rotate-[25deg] opacity-30"
               src={oxford_img}
             />
-            <div className="relative p-6">
+            <div className="relative flex h-full flex-col p-6">
               <h4 className="text-2xl font-semibold text-white">
                 Oxford Abstracts
               </h4>
@@ -126,17 +132,19 @@ const Portfolio: FunctionComponent = () => {
                 management system.
               </p>
 
-              <button
-                type="button"
-                className="relative mt-16 inline-block h-10 max-h-full w-24 max-w-full cursor-pointer
+              <div className="mt-16 flex h-full flex-col justify-end">
+                <button
+                  type="button"
+                  className="relative inline-block h-10 max-h-full w-24 max-w-full cursor-pointer
                   rounded-full border border-white 
                   px-2.5 py-2.5 text-xs
                   leading-tight text-white transition 
                   duration-150 ease-in-out hover:bg-white hover:bg-opacity-10 hover:shadow-lg active:bg-white active:bg-opacity-50
                   active:shadow-lg"
-              >
-                visit site
-              </button>
+                >
+                  visit site
+                </button>
+              </div>
             </div>
           </div>
         </div>
