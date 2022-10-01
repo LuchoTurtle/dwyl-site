@@ -10,9 +10,10 @@ const Footer: FunctionComponent = () => {
         We'll get back to you within 24 hours
       </h4>
 
-      <h4 className="mt-10 text-[26px] font-semibold text-[#D14E4E] underline md:text-[32px]">
-        hello@dwyl.com
-      </h4>
+      <div className="mt-10 text-[26px] font-semibold text-[#D14E4E] underline md:text-[32px]">
+        <a href="mailto:hello@dwyl.com">hello@dwyl.com</a>
+      </div>
+
       <h4 className="text-[22px] font-semibold text-[#444444] md:text-[28px]">
         +44 (0) 7708 796446
       </h4>
