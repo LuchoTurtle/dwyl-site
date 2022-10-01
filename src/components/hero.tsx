@@ -8,7 +8,11 @@ import Spline from '@splinetool/react-spline'
 const renderImage = (isDesktop: boolean) => {
   return isDesktop ? (
     <div className="absolute h-full w-full">
-      <Spline scene="https://prod.spline.design/MWszCFbtlIdlZM4d/scene.splinecode" onStart={() => console.log("started")} onLoad={() => console.log("load")} />
+      <Spline
+        scene="https://prod.spline.design/MWszCFbtlIdlZM4d/scene.splinecode"
+        onStart={() => console.log('started')}
+        onLoad={() => console.log('load')}
+      />
     </div>
   ) : (
     <img className="ml-auto mr-auto mt-12 h-auto w-[35vh]" src={hero_img} />

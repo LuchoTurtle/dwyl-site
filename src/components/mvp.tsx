@@ -88,7 +88,7 @@ const MVP: FunctionComponent = () => {
         <span>MVP*</span>
       </div>
 
-      <div className="mt-10 pr-16 text-right text-xs font-semibold md:mt-20 md:text-sm 2xl:text-xl 2xl:w-[1400px]">
+      <div className="mt-10 pr-16 text-right text-xs font-semibold md:mt-20 md:text-sm 2xl:w-[1400px] 2xl:text-xl">
         <p className="text-teal-400" ref={playerRef}>
           * most valuable player
         </p>

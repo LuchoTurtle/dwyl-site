@@ -56,7 +56,7 @@ const Portfolio: FunctionComponent = () => {
               src={ic_img}
             />
             <div className="relative flex h-full flex-col p-6">
-            <h4 className="text-2xl font-semibold text-white xl:text-3xl 2xl:text-4xl">
+              <h4 className="text-2xl font-semibold text-white xl:text-3xl 2xl:text-4xl">
                 Inclusive Classrooms
               </h4>
               <p className="mt-2 text-xs font-normal text-white xl:text-sm 2xl:text-base">
@@ -91,7 +91,7 @@ const Portfolio: FunctionComponent = () => {
               src={emf_img}
             />
             <div className="relative flex h-full flex-col p-6">
-            <h4 className="text-2xl font-semibold text-white xl:text-3xl 2xl:text-4xl">
+              <h4 className="text-2xl font-semibold text-white xl:text-3xl 2xl:text-4xl">
                 The Ellen MacArthur Foundation
               </h4>
               <p className="mt-2 text-xs font-normal text-white xl:text-sm 2xl:text-base">
@@ -124,7 +124,7 @@ const Portfolio: FunctionComponent = () => {
               src={oxford_img}
             />
             <div className="relative flex h-full flex-col p-6">
-            <h4 className="text-2xl font-semibold text-white xl:text-3xl 2xl:text-4xl">
+              <h4 className="text-2xl font-semibold text-white xl:text-3xl 2xl:text-4xl">
                 Oxford Abstracts
               </h4>
               <p className="mt-2 text-xs font-normal text-white xl:text-sm 2xl:text-base">

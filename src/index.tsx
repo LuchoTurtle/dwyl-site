@@ -1,7 +1,7 @@
 import Definition from 'components/definition'
 import Hero from 'components/hero'
 import MVP from 'components/mvp'
-import {StepsTimeline, StepsTitle} from 'components/steps'
+import { StepsTimeline, StepsTitle } from 'components/steps'
 import Values from 'components/values'
 import Portfolio from 'components/portfolio'
 import OpenSource from 'components/open_source'
@@ -25,20 +25,20 @@ function App() {
       </div>
 
       <div className="mt-40">
-        <Values/>
+        <Values />
       </div>
 
       <MVP />
 
       <StepsTitle />
-      
+
       <StepsTimeline />
 
       <div className="mt-40 lg:mt-0">
-        <Iterating/>
+        <Iterating />
       </div>
 
-      <div className="mr-8 ml-8 flex flex-col items-center mt-40">
+      <div className="mr-8 ml-8 mt-40 flex flex-col items-center">
         <Portfolio />
       </div>
 
@@ -46,7 +46,7 @@ function App() {
         <OpenSource />
       </div>
 
-      <div className="flex mt-40 pr-10 pl-10">
+      <div className="mt-40 flex pr-10 pl-10">
         <span className="w-full bg-stone-200 p-[1px]"></span>
       </div>
 

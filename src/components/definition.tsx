@@ -29,7 +29,7 @@ const Definition: FunctionComponent = () => {
         scrollTrigger: {
           immediateRender: false,
           trigger: containerEl,
-          start: 'top center',
+          start: 'top center'
         }
       })
 
@@ -38,7 +38,7 @@ const Definition: FunctionComponent = () => {
         scrollTrigger: {
           immediateRender: false,
           trigger: containerEl,
-          start: 'top center',
+          start: 'top center'
         },
         delay: 0.1
       })
@@ -48,7 +48,7 @@ const Definition: FunctionComponent = () => {
         scrollTrigger: {
           immediateRender: false,
           trigger: containerEl,
-          start: 'top center',
+          start: 'top center'
         },
         delay: 0.2
       })
@@ -58,7 +58,7 @@ const Definition: FunctionComponent = () => {
         scrollTrigger: {
           immediateRender: false,
           trigger: containerEl,
-          start: 'top center',
+          start: 'top center'
         },
         delay: 0.3
       })
@@ -68,7 +68,7 @@ const Definition: FunctionComponent = () => {
         scrollTrigger: {
           immediateRender: false,
           trigger: containerEl,
-          start: 'top center',
+          start: 'top center'
         },
         delay: 0.4
       })
@@ -104,7 +104,10 @@ const Definition: FunctionComponent = () => {
           <h1 className="mt-1 italic text-gray-500 2xl:text-xl" ref={nounRef}>
             noun
           </h1>
-          <h1 className="text-base leading-4 text-gray-800 2xl:text-2xl" ref={typeRef}>
+          <h1
+            className="text-base leading-4 text-gray-800 2xl:text-2xl"
+            ref={typeRef}
+          >
             <b>origin</b>: Do What You Love
           </h1>
         </div>

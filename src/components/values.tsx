@@ -62,7 +62,7 @@ const ValueBox: FunctionComponent<ValueBoxProps> = (props: ValueBoxProps) => {
       className={`h-fit w-4/6 rounded-[2.7rem] bg-gradient-to-br p-[3px] lg:h-full lg:w-full ${borderStyles}`}
       ref={hoverRef}
     >
-      <div className="flex justify-start h-full flex-col rounded-[2.6rem] bg-white pb-6 pl-8 pr-5 pt-6 md:pb-8 md:pl-10 md:pr-7 md:pt-8">
+      <div className="flex h-full flex-col justify-start rounded-[2.6rem] bg-white pb-6 pl-8 pr-5 pt-6 md:pb-8 md:pl-10 md:pr-7 md:pt-8">
         {titlePosition === 'bottom' ? (
           <>
             <p className="font-normal text-stone-700">{children}</p>
@@ -85,7 +85,9 @@ const ValueBox: FunctionComponent<ValueBoxProps> = (props: ValueBoxProps) => {
               />
             </div>
 
-            <p className="text-sm font-normal text-stone-700 2xl:text-lg">{children}</p>
+            <p className="text-sm font-normal text-stone-700 2xl:text-lg">
+              {children}
+            </p>
           </>
         )}
       </div>
