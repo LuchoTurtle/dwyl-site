@@ -85,32 +85,32 @@ const Definition: FunctionComponent = () => {
 
   return (
     <div className="flex w-full flex-col items-center" ref={containerRef}>
-      <div className="w-52 text-justify md:w-72">
+      <div className="w-52 text-justify md:w-72 2xl:w-96">
         <h2>
           <span
-            className="text-5xl font-semibold text-teal-800 lg:text-7xl"
+            className="text-5xl font-semibold text-teal-800 lg:text-7xl 2xl:text-[7rem]"
             ref={titleRef}
           >
             dwyl
           </span>
           <sup
-            className="align-super text-lg font-semibold text-teal-700/75 lg:text-2xl"
+            className="align-super text-lg font-semibold text-teal-700/75 lg:text-2xl 2xl:text-[2.2rem]"
             ref={supRef}
           >
             [/dwɪɫ/]
           </sup>
         </h2>
         <div>
-          <h1 className="mt-1 italic text-gray-500" ref={nounRef}>
+          <h1 className="mt-1 italic text-gray-500 2xl:text-xl" ref={nounRef}>
             noun
           </h1>
-          <h1 className="text-base leading-4 text-gray-800" ref={typeRef}>
+          <h1 className="text-base leading-4 text-gray-800 2xl:text-2xl" ref={typeRef}>
             <b>origin</b>: Do What You Love
           </h1>
         </div>
 
         <p
-          className="mt-3 text-sm font-medium leading-none text-stone-800"
+          className="mt-3 text-sm font-medium leading-none text-stone-800 2xl:text-base"
           ref={descriptionRef}
         >
           1. Community of people on a mission to change the world using

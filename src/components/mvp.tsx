@@ -70,7 +70,7 @@ const MVP: FunctionComponent = () => {
 
   return (
     <div className="pt-40 md:pt-52 lg:pt-[150vh]" ref={containerRef}>
-      <div className="text-center text-xl font-bold text-gray-700 md:text-4xl">
+      <div className="text-center text-xl font-bold text-gray-700 md:text-4xl 2xl:text-5xl">
         <span>we </span>
         <span>can</span>
         <span className="mr-[-1.5rem]">
@@ -78,7 +78,7 @@ const MVP: FunctionComponent = () => {
             make
           </span>
           <span
-            className="inline-block translate-x-[-51px] translate-y-[-17px] rotate-[335deg] text-teal-400 md:translate-x-[-70px] md:translate-y-[-16px]"
+            className="inline-block translate-x-[-51px] translate-y-[-17px] rotate-[335deg] text-teal-400 md:translate-x-[-70px] md:translate-y-[-16px] 2xl:translate-x-[-92px] 2xl:translate-y-[-30px]"
             ref={beRef}
           >
             be
@@ -88,7 +88,7 @@ const MVP: FunctionComponent = () => {
         <span>MVP*</span>
       </div>
 
-      <div className="mt-10 pr-16 text-right text-xs font-semibold md:mt-20 md:text-sm">
+      <div className="mt-10 pr-16 text-right text-xs font-semibold md:mt-20 md:text-sm 2xl:text-xl 2xl:w-[1400px]">
         <p className="text-teal-400" ref={playerRef}>
           * most valuable player
         </p>

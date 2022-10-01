@@ -23,14 +23,14 @@ const Title: FunctionComponent<
   if (titleOrientation === 'right') {
     return (
       <>
-        <span className="text-4xl">🧑‍🤝‍🧑</span>
-        <span className=" text-zinc-800">People</span>
+        <span className="text-4xl">{titleEmoji}</span>
+        <span className="text-zinc-800 2xl:text-3xl">{title}</span>
       </>
     )
   } else {
     return (
       <>
-        <span className="text-zinc-800">{title}</span>
+        <span className="text-zinc-800 2xl:text-3xl">{title}</span>
         <span className="text-4xl">{titleEmoji}</span>
       </>
     )
@@ -62,7 +62,7 @@ const ValueBox: FunctionComponent<ValueBoxProps> = (props: ValueBoxProps) => {
       className={`h-fit w-4/6 rounded-[2.7rem] bg-gradient-to-br p-[3px] lg:h-full lg:w-full ${borderStyles}`}
       ref={hoverRef}
     >
-      <div className="flex h-full flex-col justify-between rounded-[2.6rem] bg-white pb-6 pl-8 pr-5 pt-6 md:pb-8 md:pl-10 md:pr-7 md:pt-8">
+      <div className="flex justify-start h-full flex-col rounded-[2.6rem] bg-white pb-6 pl-8 pr-5 pt-6 md:pb-8 md:pl-10 md:pr-7 md:pt-8">
         {titlePosition === 'bottom' ? (
           <>
             <p className="font-normal text-stone-700">{children}</p>
@@ -85,7 +85,7 @@ const ValueBox: FunctionComponent<ValueBoxProps> = (props: ValueBoxProps) => {
               />
             </div>
 
-            <p className="text-sm font-normal text-stone-700">{children}</p>
+            <p className="text-sm font-normal text-stone-700 2xl:text-lg">{children}</p>
           </>
         )}
       </div>
@@ -160,7 +160,7 @@ const Values: FunctionComponent = () => {
 
   return (
     <div
-      className="mx-auto w-fit md:w-4/5 md:max-w-lg lg:max-w-none"
+      className="mx-auto w-fit md:w-4/5 md:max-w-lg lg:max-w-none xl:max-w-[1000px]"
       ref={containerRef}
     >
       <div className="lg:flex">

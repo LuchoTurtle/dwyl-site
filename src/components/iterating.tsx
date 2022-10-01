@@ -60,8 +60,8 @@ const Iterating: FunctionComponent = () => {
       ref={containerRef}
     >
       <div className="absolute flex h-full w-full items-center justify-center">
-        <div ref={textRef} className="text-center opacity-100 lg:opacity-0">
-          <h1 className="mr-[15%] ml-[15%] text-base font-semibold leading-4 text-stone-800 md:text-2xl">
+        <div ref={textRef} className="text-center opacity-100 lg:opacity-0 xl:w-4/5">
+          <h1 className="mr-[15%] ml-[15%] text-base font-semibold leading-4 text-stone-800 md:text-2xl xl:text-3xl 2xl:text-4xl">
             <span>by iterating over these </span>
             <span className="text-[#1DAA6F]">3 simple steps </span>
             <span>we maintain a </span>

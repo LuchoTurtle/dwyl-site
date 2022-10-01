@@ -64,17 +64,17 @@ const Hero: FunctionComponent = () => {
 
       <div className="z-10 flex flex-1 flex-col justify-end lg:flex-row lg:justify-start">
         <div className="mb-[5%] pr-5 pl-5 text-center lg:mb-0 lg:flex lg:w-1/2 lg:flex-col lg:justify-center lg:pr-0 lg:pl-[10%]">
-          <div className="relative flex h-[2.5rem] w-full flex-row justify-center overflow-hidden md:h-[3.5rem] lg:justify-start">
+          <div className="relative flex h-[2.5rem] w-full flex-row justify-center overflow-hidden md:h-[3.5rem] lg:justify-start 2xl:h-[5rem]">
             <p
-              className="absolute text-4xl font-semibold leading-none tracking-tight text-green-900 md:text-[3.5rem]"
+              className="absolute text-4xl font-semibold leading-none tracking-tight text-green-900 md:text-[3.5rem] 2xl:text-[5rem]"
               ref={titleRef}
             >
               software
             </p>
           </div>
-          <div className="relative flex h-[2.5rem] w-full flex-row justify-center overflow-hidden md:h-[3.5rem] lg:justify-start">
+          <div className="relative flex h-[2.5rem] w-full flex-row justify-center overflow-hidden md:h-[3.5rem] lg:justify-start 2xl:h-[5rem]">
             <p
-              className="absolute text-4xl font-semibold leading-none tracking-tight text-green-900/50 md:text-[3.5rem]"
+              className="absolute text-4xl font-semibold leading-none tracking-tight text-green-900/50 md:text-[3.5rem] 2xl:text-[5rem]"
               ref={subtitleRef}
             >
               made simple.
@@ -82,17 +82,17 @@ const Hero: FunctionComponent = () => {
           </div>
 
           <div className="mt-5 text-base md:text-lg">
-            <div className="relative flex h-[2.5rem] w-full flex-row justify-center overflow-hidden md:h-[20px] lg:h-[45px] lg:justify-start">
+            <div className="relative flex h-[2.5rem] w-full flex-row justify-center overflow-hidden md:h-[20px] lg:h-[45px] lg:justify-start 2xl:h-[1.5rem]">
               <p
-                className="absolute h-[1.5rem] leading-5 text-gray-600 lg:text-start"
+                className="absolute h-[1.5rem] leading-5 text-gray-600 lg:text-start 2xl:text-[1.5rem]"
                 ref={description1Ref}
               >
                 we offer software development services and training.
               </p>
             </div>
-            <div className="relative flex h-[2.5rem] w-full flex-row justify-center overflow-hidden md:h-[2.5rem] lg:justify-start">
+            <div className="relative flex h-[2.5rem] w-full flex-row justify-center overflow-hidden md:h-[2.5rem] lg:justify-start 2xl:h-[2rem]">
               <p
-                className="absolute mt-2 h-[1.5rem] font-thin text-gray-600"
+                className="absolute mt-2 h-[1.5rem] font-thin text-gray-600 2xl:text-[1.3rem]"
                 ref={description2Ref}
               >
                 based in London.

@@ -27,7 +27,7 @@ const SliderItem: FunctionComponent<SliderItemProps> = (
       <div className="pr-8 pl-8 sm:pl-28 sm:pr-28 md:pl-48 md:pr-48">
         <img className="ml-auto mr-auto mt-12 h-auto w-[35vh]" src={image} />
       </div>
-      <div className="sm mt-20 w-1/2 pl-8 text-start sm:pl-12 sm:pr-12">
+      <div className="sm mt-20 w-10/12 pl-8 text-start sm:pl-12 sm:pr-12">
         <h4 className="text-xs font-bold text-emerald-900 md:text-base">
           {title}
         </h4>
@@ -273,12 +273,12 @@ const PinningLayers: FunctionComponent = () => {
       >
         <div className="absolute z-[14] flex h-full w-full">
           <div className="flex flex-1 flex-col items-start justify-center pl-12 pr-12">
-            <div className="overflow-hidden text-2xl font-bold text-emerald-900">
+            <div className="overflow-hidden text-2xl font-bold text-emerald-900 2xl:text-4xl">
               <span className="block" ref={title0Ref}>
                 0. we get you to the finish line
               </span>
             </div>
-            <div className="overflow-hidden text-xl font-medium text-[#DA6844]">
+            <div className="overflow-hidden text-xl font-medium text-[#DA6844] 2xl:text-2xl">
               <span className="block" ref={description0Ref}>
                 you have a vision for your product and we are here to make it a
                 reality
@@ -294,7 +294,7 @@ const PinningLayers: FunctionComponent = () => {
 
         <div className="absolute z-[13] flex h-full w-full">
           <div className="flex flex-1 flex-col items-start justify-center pl-12 pr-12">
-            <div className="overflow-hidden text-2xl font-bold text-white">
+            <div className="overflow-hidden text-2xl font-bold text-white 2xl:text-4xl">
               <span
                 className="block translate-y-[100%] opacity-0"
                 ref={title1Ref}
@@ -302,7 +302,7 @@ const PinningLayers: FunctionComponent = () => {
                 1. understanding the problem
               </span>
             </div>
-            <div className="overflow-hidden text-xl font-medium text-[#DA6844]">
+            <div className="overflow-hidden text-xl font-medium text-[#DA6844] 2xl:text-2xl">
               <span
                 className="block translate-y-[100%] opacity-0"
                 ref={description1Ref}
@@ -322,7 +322,7 @@ const PinningLayers: FunctionComponent = () => {
 
         <div className="absolute z-[12] flex h-full w-full">
           <div className="flex flex-1 flex-col items-start justify-center pl-12 pr-12">
-            <div className="overflow-hidden text-2xl font-bold text-[#27292F]">
+            <div className="overflow-hidden text-2xl font-bold text-[#27292F] 2xl:text-4xl">
               <span
                 className="block translate-y-[100%] opacity-0"
                 ref={title2Ref}
@@ -330,7 +330,7 @@ const PinningLayers: FunctionComponent = () => {
                 2. make the next market-ready version of the solution
               </span>
             </div>
-            <div className="overflow-hidden text-xl font-medium text-[#DA6844]">
+            <div className="overflow-hidden text-xl font-medium text-[#DA6844] 2xl:text-2xl">
               <span
                 className="block translate-y-[100%] opacity-0"
                 ref={description2Ref}
@@ -350,7 +350,7 @@ const PinningLayers: FunctionComponent = () => {
 
         <div className="absolute z-[11] flex h-full w-full">
           <div className="flex flex-1 flex-col items-start justify-center pl-12 pr-12">
-            <div className="overflow-hidden text-2xl font-bold text-[#27292F]">
+            <div className="overflow-hidden text-2xl font-bold text-[#27292F] 2xl:text-4xl">
               <span
                 className="block translate-y-[100%] opacity-0"
                 ref={title3Ref}
@@ -358,7 +358,7 @@ const PinningLayers: FunctionComponent = () => {
                 3. review and return to step one
               </span>
             </div>
-            <div className="overflow-hidden text-xl font-medium text-[#DA6844]">
+            <div className="overflow-hidden text-xl font-medium text-[#DA6844] 2xl:text-2xl">
               <span
                 className="block translate-y-[100%] opacity-0"
                 ref={description3Ref}
@@ -448,13 +448,13 @@ export const StepsTitle: FunctionComponent = () => {
               ref={titleRef}
               className="text-center opacity-100 lg:opacity-0"
             >
-              <h1 className="bg-gradient-to-r from-[#009FFF] to-[#EC2F4B] bg-clip-text text-3xl font-semibold text-transparent md:text-5xl md:leading-[1.3]">
+              <h1 className="bg-gradient-to-r from-[#009FFF] to-[#EC2F4B] bg-clip-text text-3xl font-semibold text-transparent md:text-5xl md:leading-[1.3] 2xl:text-[5rem]">
                 the right solution
               </h1>
-              <h2 className="text-xl font-semibold text-stone-700 md:text-3xl">
+              <h2 className="text-xl font-semibold text-stone-700 md:text-3xl 2xl:text-[2.2rem]">
                 (in 3 easy steps)
               </h2>
-              <p className="mt-5 text-[9px] font-medium uppercase text-stone-500 md:text-xs">
+              <p className="mt-5 text-[9px] font-medium uppercase text-stone-500 md:text-xs 2xl:text-base">
                 meet your needs quickly and without waste
               </p>
             </div>

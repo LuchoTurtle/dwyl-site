@@ -13,6 +13,8 @@ import 'tailwindcss/tailwind.css'
 const container = document.getElementById('root') as HTMLDivElement
 const root = createRoot(container)
 
+//TODO https://codebyzach.github.io/pace/docs/
+
 function App() {
   return (
     <div className="overflow-x-hidden bg-white font-montserrat">
@@ -36,7 +38,7 @@ function App() {
         <Iterating/>
       </div>
 
-      <div className="mr-4 ml-4 flex flex-col items-center mt-40">
+      <div className="mr-8 ml-8 flex flex-col items-center mt-40">
         <Portfolio />
       </div>
 

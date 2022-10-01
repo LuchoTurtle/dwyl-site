@@ -7,8 +7,8 @@ import { Application } from '@splinetool/runtime'
 const OpenSource: FunctionComponent = () => {
   const github3DObject = useRef<any>(null)
 
-  const isDesktop = useMediaQuery('(min-width: 1024px)')
-  //const isDesktop = false
+  //const isDesktop = useMediaQuery('(min-width: 1024px)')
+  const isDesktop = false
 
   function onSceneLoad(spline: Application) {
     const obj = spline.findObjectByName('github');
@@ -39,16 +39,16 @@ const OpenSource: FunctionComponent = () => {
       ) : (
         <img className="h-auto w-full" src={github_img} />
       )}
-      <h2 className="mt-4 text-2xl font-semibold md:text-4xl lg:text-6xl">
+      <h2 className="mt-4 text-2xl font-semibold md:text-4xl lg:text-6xl 2xl:text-7xl text-center">
         <span className="text-[#248680]">we are full on </span>
         <span className="bg-gradient-to-r from-[#F97794] to-[#623AA2] bg-clip-text text-transparent">
           open-source
         </span>
       </h2>
-      <p className="mt-4 text-center text-sm font-light md:text-lg lg:text-xl">
+      <p className="mt-4 text-center text-sm font-light md:text-lg lg:text-xl 2xl:text-2xl">
         we believe learning sould be a shared and accesible experience.
       </p>
-      <p className="text-center text-sm font-light md:text-lg lg:text-xl">
+      <p className="text-center text-sm font-light md:text-lg lg:text-xl 2xl:text-2xl">
         we create and maintain over 200 open source repositories on GitHub.
       </p>
 
