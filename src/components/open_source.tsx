@@ -1,5 +1,5 @@
 import { FunctionComponent, useRef } from 'react'
-import github_img from 'public/github.png'
+import github_img from 'assets/github.png'
 import Spline from '@splinetool/react-spline'
 import { useMediaQuery } from 'utils'
 import { Application } from '@splinetool/runtime'

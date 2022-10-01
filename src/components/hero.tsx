@@ -1,6 +1,6 @@
 import { FunctionComponent, useEffect, useRef } from 'react'
-import logo from 'public/dwyl_logo.png'
-import hero_img from 'public/hero.png'
+import logo from 'assets/dwyl_logo.png'
+import hero_img from 'assets/hero.png'
 import gsap from 'gsap'
 import { staggerReveal, fadeUpReveal, useMediaQuery } from 'utils'
 import Spline from '@splinetool/react-spline'

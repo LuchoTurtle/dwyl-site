@@ -1,8 +1,8 @@
 import { FunctionComponent } from 'react'
-import smg_img from 'public/smg.png'
-import ic_img from 'public/ic.png'
-import emf_img from 'public/emf.png'
-import oxford_img from 'public/oxford.webp'
+import smg_img from 'assets/smg.png'
+import ic_img from 'assets/ic.png'
+import emf_img from 'assets/emf.png'
+import oxford_img from 'assets/oxford.webp'
 
 const Portfolio: FunctionComponent = () => {
   return (
@@ -33,6 +33,12 @@ const Portfolio: FunctionComponent = () => {
 
               <div className="mt-16 flex h-full flex-col justify-end">
                 <button
+                  onClick={() =>
+                    window.open(
+                      'https://github.com/TheScienceMuseum/collectionsonline',
+                      '_blank'
+                    )
+                  }
                   type="button"
                   className="relative inline-block h-10 max-h-full w-24 max-w-full cursor-pointer
                   rounded-full border border-white 
@@ -41,7 +47,7 @@ const Portfolio: FunctionComponent = () => {
                   duration-150 ease-in-out hover:bg-white hover:bg-opacity-10 hover:shadow-lg active:bg-white active:bg-opacity-50
                   active:shadow-lg"
                 >
-                  visit site
+                  check code
                 </button>
               </div>
             </div>
@@ -66,6 +72,12 @@ const Portfolio: FunctionComponent = () => {
 
               <div className="mt-16 flex h-full flex-col justify-end">
                 <button
+                  onClick={() =>
+                    window.open(
+                      'https://github.com/InclusiveClassrooms/skills-wheel',
+                      '_blank'
+                    )
+                  }
                   type="button"
                   className="relative inline-block h-10 max-h-full w-24 max-w-full cursor-pointer
                   rounded-full border border-white 
@@ -74,7 +86,7 @@ const Portfolio: FunctionComponent = () => {
                   duration-150 ease-in-out hover:bg-white hover:bg-opacity-10 hover:shadow-lg active:bg-white active:bg-opacity-50
                   active:shadow-lg"
                 >
-                  visit site
+                  check code
                 </button>
               </div>
             </div>
@@ -101,6 +113,12 @@ const Portfolio: FunctionComponent = () => {
 
               <div className="mt-16 flex h-full flex-col justify-end">
                 <button
+                  onClick={() =>
+                    window.open(
+                      'https://ellenmacarthurfoundation.org/',
+                      '_blank'
+                    )
+                  }
                   type="button"
                   className="relative inline-block h-10 max-h-full w-24 max-w-full cursor-pointer
                   rounded-full border border-white 
@@ -134,6 +152,9 @@ const Portfolio: FunctionComponent = () => {
 
               <div className="mt-16 flex h-full flex-col justify-end">
                 <button
+                  onClick={() =>
+                    window.open('https://oxfordabstracts.com/', '_blank')
+                  }
                   type="button"
                   className="relative inline-block h-10 max-h-full w-24 max-w-full cursor-pointer
                   rounded-full border border-white 
