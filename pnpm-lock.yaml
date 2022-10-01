@@ -27,6 +27,7 @@ specifiers:
   prettier-plugin-tailwindcss: ^0.1.13
   react: ^18.2.0
   react-dom: ^18.2.0
+  react-obfuscate: ^3.6.8
   react-responsive-carousel: ^3.2.23
   tailwindcss: ^3.1.8
   typescript: ^4.8.2
@@ -40,6 +41,7 @@ dependencies:
   gsap: 3.11.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-obfuscate: 3.6.8_biqbaboplfbrettd7655fr4n2y
   react-responsive-carousel: 3.2.23
 
 devDependencies:
@@ -4485,6 +4487,18 @@ packages:
 
   /react-merge-refs/1.1.0:
     resolution: {integrity: sha512-alTKsjEL0dKH/ru1Iyn7vliS2QRcBp9zZPGoWxUOvRGWPUYgjo+V01is7p04It6KhgrzhJGnIj9GgX8W4bZoCQ==}
+    dev: false
+
+  /react-obfuscate/3.6.8_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-Pc47sbOJEGqOQ65y22ZFwCGHlSwGn0tykl+sQ64wHy/ALcyZxK6zsNYD8Fp3YBcU2EhmJPSKR7BypBYtnAqqyA==}
+    engines: {node: '>= 0.10.0'}
+    peerDependencies:
+      prop-types: '>= 15'
+      react: '>= 16.8'
+      react-dom: '>= 16.8'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /react-refresh/0.14.0:

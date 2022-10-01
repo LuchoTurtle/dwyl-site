@@ -1,4 +1,5 @@
 import { FunctionComponent } from 'react'
+import Obfuscate from 'react-obfuscate';
 
 const Footer: FunctionComponent = () => {
   return (
@@ -11,11 +12,15 @@ const Footer: FunctionComponent = () => {
       </h4>
 
       <div className="mt-10 text-[26px] font-semibold text-[#D14E4E] underline md:text-[32px]">
-        <a href="mailto:hello@dwyl.com">hello@dwyl.com</a>
+        <Obfuscate email="hello@dwyl.com">
+          hello@dwyl.com
+        </Obfuscate>
       </div>
 
       <h4 className="text-[22px] font-semibold text-[#444444] md:text-[28px]">
-        +44 (0) 7708 796446
+        <Obfuscate phone="+44 (0) 7708 796446">
+          +44 (0) 7708 796446
+        </Obfuscate>
       </h4>
 
       <div className="mt-28 flex flex-row items-end justify-between pb-10">
