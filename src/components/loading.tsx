@@ -9,6 +9,10 @@ const Loading: FunctionComponent = () => {
   const [progress, setProgress] = useState(0)
   const [done, setDone] = useState(false)
 
+  // When mounted, the document is not scrollable
+  useEffect(() => {document.body.style.overflow = 'hidden'}, [])
+
+  // Progress 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setProgress(progress + (1 - progress) * 0.1)
@@ -19,6 +23,7 @@ const Loading: FunctionComponent = () => {
     }
   }, [progress])
 
+  // Setting done and done animation
   useEffect(() => {
     if(progress > 0.5 && !done) {
       setDone(true)
@@ -31,11 +36,11 @@ const Loading: FunctionComponent = () => {
       const text1El = text1Ref.current
       const text2El = text2Ref.current
 
-      const tl = gsap.timeline()
+      const tl = gsap.timeline({onComplete: () => {document.body.style.overflow = 'unset'} })
     
       tl.to(text1El, {yPercent: -100, ease: "power2.out"})
       tl.to(text2El, {yPercent: -100, ease: "power2.out"}, "=<")
-      tl.to(containerEl, {opacity: 0, duration: 2, ease: "power2.out"}, ">0.5")
+      tl.to(containerEl, {opacity: 0, duration: 1.5, ease: "power2.in"}, ">0.5")
       tl.to(containerEl, {display: "none"}, ">")
 
     }
