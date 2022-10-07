@@ -62,7 +62,7 @@ const ValueBox: FunctionComponent<ValueBoxProps> = (props: ValueBoxProps) => {
       className={`h-fit w-4/6 rounded-[2.7rem] bg-gradient-to-br p-[3px] lg:h-full lg:w-full ${borderStyles}`}
       ref={hoverRef}
     >
-      <div className="flex h-full flex-col justify-start rounded-[2.6rem] bg-white pb-6 pl-8 pr-5 pt-6 md:pb-8 md:pl-10 md:pr-7 md:pt-8">
+      <div className="flex h-full flex-col justify-start rounded-[2.6rem] bg-white pb-6 pl-8 pr-5 pt-6 md:pb-8 md:pl-10 md:pr-7 md:pt-8 lg:justify-between">
         {titlePosition === 'bottom' ? (
           <>
             <p className="font-normal text-stone-700">{children}</p>
@@ -174,6 +174,7 @@ const Values: FunctionComponent = () => {
             title="People"
             titleEmoji="🧑‍🤝‍🧑"
             borderStyles="from-[#CCABD8] via-[#9AAEE3] to-[#FA897B]"
+            titlePosition={isDesktop ? 'bottom' : 'top'}
           >
             Our people are our primary focus, not profit. We have a worldwide
             community of over 400 creative technologists. We believe in
@@ -190,6 +191,8 @@ const Values: FunctionComponent = () => {
             title="Transparency"
             titleEmoji="🤝"
             borderStyles="from-[#86E3CE] via-[#E39AD3] to-[#FFDD94]"
+            titlePosition={isDesktop ? 'bottom' : 'top'}
+            titleOrientation={isDesktop ? 'right' : 'left'}
           >
             Open-Source and Open-Kimono: we’re building dwyl for all to see! The
             vast majority of dwyl projects are written open-source. This allows
@@ -224,6 +227,7 @@ const Values: FunctionComponent = () => {
             title="Organic Growth"
             titleEmoji="🌳"
             borderStyles="from-[#D8D3AB] via-[#E39E9A] to-[#FA7B7B]"
+            titleOrientation={isDesktop ? 'right' : 'left'}
           >
             We recycle and are carbon neutral, but it’s not just the planet’s
             environment we want to improve. We love projects that have a
