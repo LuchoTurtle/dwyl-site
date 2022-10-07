@@ -1,51 +1,44 @@
-import { FunctionComponent, useRef } from 'react'
-import github_img from 'assets/github.png'
-import Spline from '@splinetool/react-spline'
+import { FunctionComponent, useEffect, useRef, useState } from 'react'
+import opensourceOn_img from 'assets/open_source_on.png'
+import opensourceOff_img from 'assets/open_source_off.png'
 import { useMediaQuery } from 'utils'
-import { Application } from '@splinetool/runtime'
+import gsap from 'gsap'
 
-interface OpenSourceProps {
-  onSceneLoad: () => void
-}
-const OpenSource: FunctionComponent<OpenSourceProps> = (
-  props: OpenSourceProps
-) => {
-  const github3DObject = useRef<any>(null)
+
+const OpenSource: FunctionComponent= () => {
+
+  const lightOffImageRef = useRef(null)
+  let hoverAnimation: gsap.core.Tween;
+
+  // Creating the timeline with the reference when the component is mounted
+  useEffect(() => {
+    hoverAnimation = gsap.fromTo(lightOffImageRef.current, 
+    {opacity: 1}, 
+    {
+      opacity: 0,
+      duration: 1.5,
+      paused: true,
+      ease: "power4.out"
+    });
+  }, [])
+
 
   const isDesktop = useMediaQuery('(min-width: 1024px)')
-  //const isDesktop = false
-
-  function onSceneLoad(spline: Application) {
-    const obj = spline.findObjectByName('github')
-    // save the object in a ref for later use
-    github3DObject.current = obj
-    props.onSceneLoad()
-  }
-
-  function triggerAnimation() {
-    github3DObject.current.emitEvent('mouseHover')
-  }
-
-  function reverseAnimation() {
-    github3DObject.current.emitEventReverse('mouseHover')
-  }
 
   return (
     <div className="flex flex-col items-center pl-5 pr-5">
       {isDesktop ? (
         <div
-          className="h-[36rem] w-full cursor-pointer"
+          className="flex flex-col justify-center items-center h-[36rem] w-full cursor-pointer"
           onClick={() => window.open('https://github.com/dwyl', '_blank')}
-          onMouseEnter={triggerAnimation}
-          onMouseLeave={reverseAnimation}
+          onMouseOver={() => hoverAnimation.play()}
+          onMouseOut={() => hoverAnimation.reverse()}
         >
-          <Spline
-            scene="https://prod.spline.design/6UZds93Rf0Hglh5C/scene.splinecode"
-            onLoad={onSceneLoad}
-          />
+          <img className="z-10 h-[36rem] w-auto absolute object-contain" src={opensourceOff_img} ref={lightOffImageRef} />
+          <img className=" z-0 h-[36rem] w-auto absolute object-contain" src={opensourceOn_img} />
         </div>
       ) : (
-        <img className="h-auto w-full" src={github_img} />
+        <img className="h-auto w-full" src={opensourceOff_img} />
       )}
       <h2 className="mt-4 text-center text-2xl font-semibold md:text-4xl lg:text-6xl 2xl:text-7xl">
         <span className="text-[#248680]">we are full on </span>

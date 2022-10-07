@@ -14,8 +14,8 @@ const Hero: FunctionComponent<HeroProps> = (props: HeroProps) => {
   const description1Ref = useRef(null)
   const description2Ref = useRef(null)
 
-  const isDesktop = useMediaQuery('(min-width: 1024px)')
-  //const isDesktop = false
+  //const isDesktop = useMediaQuery('(min-width: 1024px)')
+  const isDesktop = false
 
   useEffect(() => {
     const titleEl = titleRef.current

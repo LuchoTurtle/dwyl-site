@@ -45,7 +45,7 @@ function App() {
       </div>
 
       <div className="mt-40">
-        <OpenSource onSceneLoad={() => console.log("open source loaded")} />
+        <OpenSource/>
       </div>
 
       <div className="mt-40 flex pr-10 pl-10">

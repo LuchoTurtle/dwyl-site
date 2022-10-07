@@ -25,7 +25,7 @@ const Loading: FunctionComponent = () => {
 
   // Setting done and done animation
   useEffect(() => {
-    if(progress > 0.5 && !done) {
+    if(progress > 0.1 && !done) {
       setDone(true)
     }
   }, [progress])
