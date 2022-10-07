@@ -14,9 +14,10 @@ const Hero: FunctionComponent<HeroProps> = (props: HeroProps) => {
   const description1Ref = useRef(null)
   const description2Ref = useRef(null)
 
-  //const isDesktop = useMediaQuery('(min-width: 1024px)')
-  const isDesktop = false
+  const isDesktop = useMediaQuery('(min-width: 1024px)')
+  //const isDesktop = false
 
+  // Setting up animations
   useEffect(() => {
     const titleEl = titleRef.current
     const subtitleEl = subtitleRef.current
@@ -32,6 +33,11 @@ const Hero: FunctionComponent<HeroProps> = (props: HeroProps) => {
     return () => {
       tl.kill()
     }
+  }, [])
+
+  // If we are on mobile, there's no scene to load so we tell the scene is loaded after mounting
+  useEffect(() => {
+    if (!isDesktop) props.onSceneLoad()
   }, [])
 
   return (

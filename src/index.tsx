@@ -10,17 +10,24 @@ import Iterating from 'components/iterating'
 import { createRoot } from 'react-dom/client'
 import 'tailwindcss/tailwind.css'
 import Loading from 'components/loading'
+import { useState } from 'react'
 
 const container = document.getElementById('root') as HTMLDivElement
 const root = createRoot(container)
 
 function App() {
+  const [sceneLoaded, setSceneLoaded] = useState(false)
 
   return (
     <div className="overflow-x-hidden bg-white font-montserrat">
-      <Loading/>
+      <Loading done={sceneLoaded} />
 
-      <Hero onSceneLoad={() => console.log("hero loaded")} />
+      <Hero
+        onSceneLoad={() => {
+          // We wait for a second after loading so it's prettier (shows a bit of progress)
+          setTimeout(() => setSceneLoaded(true), 1000)
+        }}
+      />
 
       <div className="mt-40">
         <Definition />
@@ -45,7 +52,7 @@ function App() {
       </div>
 
       <div className="mt-40">
-        <OpenSource/>
+        <OpenSource />
       </div>
 
       <div className="mt-40 flex pr-10 pl-10">

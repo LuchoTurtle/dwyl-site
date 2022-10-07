@@ -1,14 +1,23 @@
 import React, { Component, FunctionComponent, useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 
-const Loading: FunctionComponent = () => {
+interface LoadingProps {
+  done: boolean
+}
+const Loading: FunctionComponent<LoadingProps> = (props: LoadingProps) => {
+  const sceneIsLoaded = props.done
+
+  // References for animation
   const containerRef = useRef(null)
   const text1Ref = useRef(null)
   const text2Ref = useRef(null)
   
+  // Local state
   const [progress, setProgress] = useState(0)
   const [done, setDone] = useState(false)
 
+
+  
   // When mounted, the document is not scrollable
   useEffect(() => {document.body.style.overflow = 'hidden'}, [])
 
@@ -16,19 +25,20 @@ const Loading: FunctionComponent = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setProgress(progress + (1 - progress) * 0.1)
-    }, 500 + 200 * Math.random())
+    }, 500 * Math.random())
 
     return () => {
       clearInterval(intervalId)
     }
   }, [progress])
 
-  // Setting done and done animation
+  // Setting state and starting done animation
   useEffect(() => {
-    if(progress > 0.1 && !done) {
+    if(sceneIsLoaded && !done) {
+      setProgress(1)
       setDone(true)
     }
-  }, [progress])
+  }, [sceneIsLoaded])
 
   useEffect(() => {
     if(done) {
@@ -38,7 +48,7 @@ const Loading: FunctionComponent = () => {
 
       const tl = gsap.timeline({onComplete: () => {document.body.style.overflow = 'unset'} })
     
-      tl.to(text1El, {yPercent: -100, ease: "power2.out"})
+      tl.to(text1El, {delay: 1, yPercent: -100, ease: "power2.out"})
       tl.to(text2El, {yPercent: -100, ease: "power2.out"}, "=<")
       tl.to(containerEl, {opacity: 0, duration: 1.5, ease: "power2.in"}, ">0.5")
       tl.to(containerEl, {display: "none"}, ">")

@@ -7,12 +7,15 @@ import gsap from 'gsap'
 
 const OpenSource: FunctionComponent= () => {
 
-  const lightOffImageRef = useRef(null)
-  let hoverAnimation: gsap.core.Tween;
+  const lightOffImageRef = useRef(null as any)
 
-  // Creating the timeline with the reference when the component is mounted
+  const isDesktop = useMediaQuery('(min-width: 1024px)')
+
+  // Creating the timeline with the reference when the component is mounted and adding to mouseover and mouseout events
   useEffect(() => {
-    hoverAnimation = gsap.fromTo(lightOffImageRef.current, 
+    const lightOffImageEl = lightOffImageRef.current
+
+    const hoverAnimation = gsap.fromTo(lightOffImageEl, 
     {opacity: 1}, 
     {
       opacity: 0,
@@ -20,10 +23,13 @@ const OpenSource: FunctionComponent= () => {
       paused: true,
       ease: "power4.out"
     });
+
+    if(lightOffImageEl) {
+      lightOffImageEl.addEventListener("mouseover", () => hoverAnimation.play());
+      lightOffImageEl.addEventListener("mouseout", () => hoverAnimation.reverse());
+    }
+
   }, [])
-
-
-  const isDesktop = useMediaQuery('(min-width: 1024px)')
 
   return (
     <div className="flex flex-col items-center pl-5 pr-5">
@@ -31,8 +37,6 @@ const OpenSource: FunctionComponent= () => {
         <div
           className="flex flex-col justify-center items-center h-[36rem] w-full cursor-pointer"
           onClick={() => window.open('https://github.com/dwyl', '_blank')}
-          onMouseOver={() => hoverAnimation.play()}
-          onMouseOut={() => hoverAnimation.reverse()}
         >
           <img className="z-10 h-[36rem] w-auto absolute object-contain" src={opensourceOff_img} ref={lightOffImageRef} />
           <img className=" z-0 h-[36rem] w-auto absolute object-contain" src={opensourceOn_img} />

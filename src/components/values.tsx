@@ -53,8 +53,8 @@ const ValueBox: FunctionComponent<ValueBoxProps> = (props: ValueBoxProps) => {
   useEffect(() => {
     const el = hoverRef.current
 
-    if (isHover) gsap.to(el, { duration: 1, scale: 1.02, ease: 'power2.out' })
-    else gsap.to(el, { duration: 1, scale: 1, ease: 'power2.out' })
+    if (isHover) gsap.to(el, { duration: 0.5, scale: 1.02, ease: 'power2.out' })
+    else gsap.to(el, { duration: 0.5, scale: 1, ease: 'power2.out' })
   }, [isHover])
 
   return (

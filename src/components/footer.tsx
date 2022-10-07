@@ -16,7 +16,7 @@ const Footer: FunctionComponent = () => {
       </div>
 
       <h4 className="text-[22px] font-semibold text-[#444444] md:text-[28px]">
-        <Obfuscate phone="+44 (0) 7708 796446">+44 (0) 7708 796446</Obfuscate>
+        <Obfuscate href="tel:+44 (0) 7708 796446">+44 (0) 7708 796446</Obfuscate>
       </h4>
 
       <div className="mt-28 flex flex-row items-end justify-between pb-10">
