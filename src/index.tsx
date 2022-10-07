@@ -9,15 +9,17 @@ import Footer from 'components/footer'
 import Iterating from 'components/iterating'
 import { createRoot } from 'react-dom/client'
 import 'tailwindcss/tailwind.css'
+import Loading from 'components/loading'
 
 const container = document.getElementById('root') as HTMLDivElement
 const root = createRoot(container)
 
-//TODO https://codebyzach.github.io/pace/docs/
-
 function App() {
+
   return (
     <div className="overflow-x-hidden bg-white font-montserrat">
+      <Loading/>
+
       <Hero />
 
       <div className="mt-40">
