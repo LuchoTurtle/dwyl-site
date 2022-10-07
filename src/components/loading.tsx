@@ -46,11 +46,12 @@ const Loading: FunctionComponent<LoadingProps> = (props: LoadingProps) => {
       const text1El = text1Ref.current
       const text2El = text2Ref.current
 
-      const tl = gsap.timeline({onComplete: () => {document.body.style.overflow = 'unset'} })
+      const tl = gsap.timeline()
     
       tl.to(text1El, {delay: 1, yPercent: -100, ease: "power2.out"})
       tl.to(text2El, {yPercent: -100, ease: "power2.out"}, "=<")
-      tl.to(containerEl, {opacity: 0, duration: 1.5, ease: "power2.in"}, ">0.5")
+      tl.add(() => {document.body.style.overflow = 'unset'})            // Show scrollbar upon completion
+      tl.to(containerEl, {opacity: 0, duration: 1.5, ease: "power4.in"}, ">0.5")
       tl.to(containerEl, {display: "none"}, ">")
 
     }

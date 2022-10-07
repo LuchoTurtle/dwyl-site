@@ -19,9 +19,8 @@ const OpenSource: FunctionComponent= () => {
     {opacity: 1}, 
     {
       opacity: 0,
-      duration: 1.5,
+      duration: .75,
       paused: true,
-      ease: "power4.out"
     });
 
     if(lightOffImageEl) {
@@ -54,7 +53,7 @@ const OpenSource: FunctionComponent= () => {
         we believe learning sould be a shared and accesible experience.
       </p>
       <p className="text-center text-sm font-light md:text-lg lg:text-xl 2xl:text-2xl">
-        we create and maintain over 200 open source repositories on GitHub.
+        we create and maintain over 200 open-source repositories on GitHub.
       </p>
 
       {!isDesktop && (

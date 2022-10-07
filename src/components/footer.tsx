@@ -21,7 +21,7 @@ const Footer: FunctionComponent = () => {
 
       <div className="mt-28 flex flex-row items-end justify-between pb-10">
         <span className="text-[11px] font-normal text-[#248680] opacity-40 md:text-[17px]">
-          @ 2014 - 2022 dwyl, LLC
+          @ 2014 - {new Date().getFullYear()} dwyl, LLC
         </span>
         <div className="flex flex-row">
           <svg

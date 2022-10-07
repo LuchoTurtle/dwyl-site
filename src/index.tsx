@@ -8,9 +8,12 @@ import OpenSource from 'components/open_source'
 import Footer from 'components/footer'
 import Iterating from 'components/iterating'
 import { createRoot } from 'react-dom/client'
-import 'tailwindcss/tailwind.css'
+
 import Loading from 'components/loading'
 import { useState } from 'react'
+
+import 'tailwindcss/tailwind.css'
+import './scrollbar.css'
 
 const container = document.getElementById('root') as HTMLDivElement
 const root = createRoot(container)
