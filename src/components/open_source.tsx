@@ -4,16 +4,22 @@ import Spline from '@splinetool/react-spline'
 import { useMediaQuery } from 'utils'
 import { Application } from '@splinetool/runtime'
 
-const OpenSource: FunctionComponent = () => {
+interface OpenSourceProps {
+  onSceneLoad: () => void
+}
+const OpenSource: FunctionComponent<OpenSourceProps> = (
+  props: OpenSourceProps
+) => {
   const github3DObject = useRef<any>(null)
 
-  //const isDesktop = useMediaQuery('(min-width: 1024px)')
-  const isDesktop = false
+  const isDesktop = useMediaQuery('(min-width: 1024px)')
+  //const isDesktop = false
 
   function onSceneLoad(spline: Application) {
     const obj = spline.findObjectByName('github')
     // save the object in a ref for later use
     github3DObject.current = obj
+    props.onSceneLoad()
   }
 
   function triggerAnimation() {

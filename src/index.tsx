@@ -20,7 +20,7 @@ function App() {
     <div className="overflow-x-hidden bg-white font-montserrat">
       <Loading/>
 
-      <Hero />
+      <Hero onSceneLoad={() => console.log("hero loaded")} />
 
       <div className="mt-40">
         <Definition />
@@ -45,7 +45,7 @@ function App() {
       </div>
 
       <div className="mt-40">
-        <OpenSource />
+        <OpenSource onSceneLoad={() => console.log("open source loaded")} />
       </div>
 
       <div className="mt-40 flex pr-10 pl-10">

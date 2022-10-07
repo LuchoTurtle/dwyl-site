@@ -5,28 +5,17 @@ import gsap from 'gsap'
 import { staggerReveal, fadeUpReveal, useMediaQuery } from 'utils'
 import Spline from '@splinetool/react-spline'
 
-const renderImage = (isDesktop: boolean) => {
-  return isDesktop ? (
-    <div className="absolute h-full w-full">
-      <Spline
-        scene="https://prod.spline.design/MWszCFbtlIdlZM4d/scene.splinecode"
-        onStart={() => console.log('started')}
-        onLoad={() => console.log('load')}
-      />
-    </div>
-  ) : (
-    <img className="ml-auto mr-auto mt-12 h-auto w-[35vh]" src={hero_img} />
-  )
+interface HeroProps {
+  onSceneLoad: () => void
 }
-
-const Hero: FunctionComponent = () => {
+const Hero: FunctionComponent<HeroProps> = (props: HeroProps) => {
   const titleRef = useRef(null)
   const subtitleRef = useRef(null)
   const description1Ref = useRef(null)
   const description2Ref = useRef(null)
 
-  //const isDesktop = useMediaQuery('(min-width: 1024px)')
-  const isDesktop = false
+  const isDesktop = useMediaQuery('(min-width: 1024px)')
+  //const isDesktop = false
 
   useEffect(() => {
     const titleEl = titleRef.current
@@ -64,7 +53,16 @@ const Hero: FunctionComponent = () => {
         </div>
       </div>
 
-      {renderImage(isDesktop)}
+      {isDesktop ? (
+        <div className="absolute h-full w-full">
+          <Spline
+            scene="https://prod.spline.design/MWszCFbtlIdlZM4d/scene.splinecode"
+            onStart={() => props.onSceneLoad()}
+          />
+        </div>
+      ) : (
+        <img className="ml-auto mr-auto mt-12 h-auto w-[35vh]" src={hero_img} />
+      )}
 
       <div className="z-10 flex flex-1 flex-col justify-end lg:flex-row lg:justify-start">
         <div className="mb-[5%] pr-5 pl-5 text-center lg:mb-0 lg:flex lg:w-1/2 lg:flex-col lg:justify-center lg:pr-0 lg:pl-[10%]">
