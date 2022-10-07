@@ -4,9 +4,7 @@ import opensourceOff_img from 'assets/open_source_off.png'
 import { useMediaQuery } from 'utils'
 import gsap from 'gsap'
 
-
-const OpenSource: FunctionComponent= () => {
-
+const OpenSource: FunctionComponent = () => {
   const lightOffImageRef = useRef(null as any)
 
   const isDesktop = useMediaQuery('(min-width: 1024px)')
@@ -15,30 +13,40 @@ const OpenSource: FunctionComponent= () => {
   useEffect(() => {
     const lightOffImageEl = lightOffImageRef.current
 
-    const hoverAnimation = gsap.fromTo(lightOffImageEl, 
-    {opacity: 1}, 
-    {
-      opacity: 0,
-      duration: .75,
-      paused: true,
-    });
+    const hoverAnimation = gsap.fromTo(
+      lightOffImageEl,
+      { opacity: 1 },
+      {
+        opacity: 0,
+        duration: 0.75,
+        paused: true
+      }
+    )
 
-    if(lightOffImageEl) {
-      lightOffImageEl.addEventListener("mouseover", () => hoverAnimation.play());
-      lightOffImageEl.addEventListener("mouseout", () => hoverAnimation.reverse());
+    if (lightOffImageEl) {
+      lightOffImageEl.addEventListener('mouseover', () => hoverAnimation.play())
+      lightOffImageEl.addEventListener('mouseout', () =>
+        hoverAnimation.reverse()
+      )
     }
-
   }, [])
 
   return (
     <div className="flex flex-col items-center pl-5 pr-5">
       {isDesktop ? (
         <div
-          className="flex flex-col justify-center items-center h-[36rem] w-full cursor-pointer"
+          className="flex h-[36rem] w-full cursor-pointer flex-col items-center justify-center"
           onClick={() => window.open('https://github.com/dwyl', '_blank')}
         >
-          <img className="z-10 h-[36rem] w-auto absolute object-contain" src={opensourceOff_img} ref={lightOffImageRef} />
-          <img className=" z-0 h-[36rem] w-auto absolute object-contain" src={opensourceOn_img} />
+          <img
+            className="absolute z-10 h-[36rem] w-auto object-contain"
+            src={opensourceOff_img}
+            ref={lightOffImageRef}
+          />
+          <img
+            className=" absolute z-0 h-[36rem] w-auto object-contain"
+            src={opensourceOn_img}
+          />
         </div>
       ) : (
         <img className="h-auto w-full" src={opensourceOff_img} />

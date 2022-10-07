@@ -47,8 +47,7 @@ const Hero: FunctionComponent<HeroProps> = (props: HeroProps) => {
           <img className="max-h-full max-w-full" src={logo} />
         </div>
         <div className="flex h-12 w-24 items-center justify-end">
-          {
-            /*
+          {/*
           <button
             type="button"
             className="inline-block h-10 max-h-full w-16 max-w-full cursor-pointer rounded-full bg-green-700 px-2.5 
@@ -58,8 +57,7 @@ const Hero: FunctionComponent<HeroProps> = (props: HeroProps) => {
           >
             app
           </button>
-            */
-          }
+            */}
         </div>
       </div>
 
