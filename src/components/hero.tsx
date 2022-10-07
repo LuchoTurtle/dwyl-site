@@ -1,9 +1,12 @@
 import { FunctionComponent, useEffect, useRef, useState } from 'react'
+
+import Spline from '@splinetool/react-spline'
+import gsap from 'gsap'
+
+import { fadeUpReveal, staggerReveal, useMediaQuery } from 'utils'
+
 import logo from 'assets/dwyl_logo.png'
 import hero_img from 'assets/hero.png'
-import gsap from 'gsap'
-import { staggerReveal, fadeUpReveal, useMediaQuery } from 'utils'
-import Spline from '@splinetool/react-spline'
 
 // Duration in seconds of the loading animation
 // I could have called directly on the timeline object in the Loading object but this is much easier and faster

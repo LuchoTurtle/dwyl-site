@@ -1,8 +1,9 @@
 import { FunctionComponent } from 'react'
-import smg_img from 'assets/smg.png'
-import ic_img from 'assets/ic.png'
+
 import emf_img from 'assets/emf.png'
+import ic_img from 'assets/ic.png'
 import oxford_img from 'assets/oxford.webp'
+import smg_img from 'assets/smg.png'
 
 const Portfolio: FunctionComponent = () => {
   return (

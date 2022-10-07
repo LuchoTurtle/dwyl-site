@@ -1,9 +1,0 @@
-{
-  "trailingComma": "none",
-  "semi": false,
-  "singleQuote": true,
-  "plugins": ["prettier-plugin-tailwindcss"],
-  "importOrder": ["^@core/(.*)$", "^@server/(.*)$", "^@ui/(.*)$", "^[./]"],
-  "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true
-}

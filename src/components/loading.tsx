@@ -5,6 +5,7 @@ import React, {
   useRef,
   useState
 } from 'react'
+
 import gsap from 'gsap'
 
 interface LoadingProps {

@@ -1,19 +1,20 @@
-import Definition from 'components/definition'
-import Hero from 'components/hero'
-import MVP from 'components/mvp'
-import { StepsTimeline, StepsTitle } from 'components/steps'
-import Values from 'components/values'
-import Portfolio from 'components/portfolio'
-import OpenSource from 'components/open_source'
-import Footer from 'components/footer'
-import Iterating from 'components/iterating'
+import { useState } from 'react'
 import { createRoot } from 'react-dom/client'
 
+import Definition from 'components/definition'
+import Footer from 'components/footer'
+import Hero from 'components/hero'
+import Iterating from 'components/iterating'
 import Loading from 'components/loading'
-import { useState } from 'react'
+import MVP from 'components/mvp'
+import OpenSource from 'components/open_source'
+import Portfolio from 'components/portfolio'
+import { StepsTimeline, StepsTitle } from 'components/steps'
+import Values from 'components/values'
+
+import './scrollbar.css'
 
 import 'tailwindcss/tailwind.css'
-import './scrollbar.css'
 
 const container = document.getElementById('root') as HTMLDivElement
 const root = createRoot(container)

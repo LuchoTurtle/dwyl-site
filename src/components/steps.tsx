@@ -1,13 +1,17 @@
 import { FunctionComponent, useLayoutEffect, useRef } from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
+
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+import { useMediaQuery } from 'utils'
+
 import step0_img from 'assets/step0.png'
 import step1_img from 'assets/step1.png'
 import step2_img from 'assets/step2.png'
-import step3_img from 'assets/step3.png'
-import { useMediaQuery } from 'utils'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import step3_img from 'assets/step3.png'  
+
 gsap.registerPlugin(ScrollTrigger)
 
 // Carousel slider component (this is for mobile devices only)

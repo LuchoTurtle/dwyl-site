@@ -1,8 +1,11 @@
 import { FunctionComponent, useEffect, useRef, useState } from 'react'
-import opensourceOn_img from 'assets/open_source_on.png'
-import opensourceOff_img from 'assets/open_source_off.png'
-import { useMediaQuery } from 'utils'
+
 import gsap from 'gsap'
+
+import { useMediaQuery } from 'utils'
+
+import opensourceOff_img from 'assets/open_source_off.png'
+import opensourceOn_img from 'assets/open_source_on.png'
 
 const OpenSource: FunctionComponent = () => {
   const lightOffImageRef = useRef(null as any)

@@ -1,7 +1,9 @@
 import { FunctionComponent, useEffect, useLayoutEffect, useRef } from 'react'
-import { scaleUpReveal, useHover, useMediaQuery } from 'utils'
+
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { scaleUpReveal, useHover, useMediaQuery } from 'utils'
+
 gsap.registerPlugin(ScrollTrigger)
 
 interface ValueBoxProps extends React.PropsWithChildren {
