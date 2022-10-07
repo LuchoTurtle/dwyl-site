@@ -1,43 +1,55 @@
-import { FunctionComponent, useEffect, useRef } from 'react'
+import { FunctionComponent, useEffect, useRef, useState } from 'react'
 import logo from 'assets/dwyl_logo.png'
 import hero_img from 'assets/hero.png'
 import gsap from 'gsap'
 import { staggerReveal, fadeUpReveal, useMediaQuery } from 'utils'
 import Spline from '@splinetool/react-spline'
 
+// Duration in seconds of the loading animation
+// I could have called directly on the timeline object in the Loading object but this is much easier and faster
+const loadingAnimationDuration = 4
+
 interface HeroProps {
   onSceneLoad: () => void
 }
 const Hero: FunctionComponent<HeroProps> = (props: HeroProps) => {
+  const [loadingComplete, setLoadingComplete] = useState(false)
+
   const titleRef = useRef(null)
   const subtitleRef = useRef(null)
   const description1Ref = useRef(null)
   const description2Ref = useRef(null)
 
   const isDesktop = useMediaQuery('(min-width: 1024px)')
-  //const isDesktop = false
+
+  const onSceneLoaded = () => {
+    props.onSceneLoad()
+    setLoadingComplete(true)
+  }
 
   // Setting up animations
   useEffect(() => {
-    const titleEl = titleRef.current
-    const subtitleEl = subtitleRef.current
-    const description1El = description1Ref.current
-    const description2El = description2Ref.current
+    if (loadingComplete) {
+      const titleEl = titleRef.current
+      const subtitleEl = subtitleRef.current
+      const description1El = description1Ref.current
+      const description2El = description2Ref.current
 
-    const tl = gsap.timeline()
-    tl.from(titleEl, staggerReveal)
-    tl.from(subtitleEl, staggerReveal, '<')
-    tl.from(description1El, fadeUpReveal, '<+=.4')
-    tl.from(description2El, fadeUpReveal, '<+=.1')
+      const tl = gsap.timeline({ delay: loadingAnimationDuration })
+      tl.from(titleEl, staggerReveal)
+      tl.from(subtitleEl, { ...staggerReveal, y: 250 }, '<')
+      tl.from(description1El, fadeUpReveal, '<+=.4')
+      tl.from(description2El, fadeUpReveal, '<+=.1')
 
-    return () => {
-      tl.kill()
+      return () => {
+        tl.kill()
+      }
     }
-  }, [])
+  }, [loadingComplete])
 
   // If we are on mobile, there's no scene to load so we tell the scene is loaded after mounting
   useEffect(() => {
-    if (!isDesktop) props.onSceneLoad()
+    if (!isDesktop) onSceneLoaded()
   }, [])
 
   return (
@@ -65,7 +77,7 @@ const Hero: FunctionComponent<HeroProps> = (props: HeroProps) => {
         <div className="absolute h-full w-full">
           <Spline
             scene="https://prod.spline.design/MWszCFbtlIdlZM4d/scene.splinecode"
-            onStart={() => props.onSceneLoad()}
+            onStart={() => onSceneLoaded()}
           />
         </div>
       ) : (

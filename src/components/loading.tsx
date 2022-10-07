@@ -56,9 +56,10 @@ const Loading: FunctionComponent<LoadingProps> = (props: LoadingProps) => {
 
       tl.to(text1El, { delay: 1, yPercent: -100, ease: 'power2.out' })
       tl.to(text2El, { yPercent: -100, ease: 'power2.out' }, '=<')
+      // Show scrollbar upon completion
       tl.add(() => {
         document.body.style.overflow = 'unset'
-      }) // Show scrollbar upon completion
+      })
       tl.to(
         containerEl,
         { opacity: 0, duration: 1.5, ease: 'power4.in' },
