@@ -3,7 +3,7 @@ import { FunctionComponent, useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-import { fadeUpReveal, useMediaQuery } from 'utils'
+import { useMediaQuery } from 'utils'
 
 gsap.registerPlugin(ScrollTrigger)
 

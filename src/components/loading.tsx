@@ -1,5 +1,4 @@
-import React, {
-  Component,
+import {
   FunctionComponent,
   useEffect,
   useRef,
