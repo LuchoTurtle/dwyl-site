@@ -49,9 +49,12 @@ const ValueBox: FunctionComponent<ValueBoxProps> = (props: ValueBoxProps) => {
     children
   } = props
 
+  // References
   const hoverRef = useRef(null)
+
   const isHover = useHover(hoverRef)
 
+  // GSAP animation on hover
   useEffect(() => {
     const el = hoverRef.current
 
@@ -98,6 +101,7 @@ const ValueBox: FunctionComponent<ValueBoxProps> = (props: ValueBoxProps) => {
 }
 
 const Values: FunctionComponent = () => {
+  // References
   const containerRef = useRef(null)
   const value1Ref = useRef(null)
   const value2Ref = useRef(null)
@@ -106,6 +110,7 @@ const Values: FunctionComponent = () => {
 
   const isDesktop = useMediaQuery('(min-width: 1024px)')
 
+  // GSAP animations
   useLayoutEffect(() => {
     if (isDesktop) {
       const containerEl = containerRef.current

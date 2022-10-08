@@ -8,6 +8,7 @@ import { fadeUpReveal, useMediaQuery } from 'utils'
 gsap.registerPlugin(ScrollTrigger)
 
 const MVP: FunctionComponent = () => {
+  // References
   const containerRef = useRef(null)
   const beRef = useRef(null)
   const playerRef = useRef(null)
@@ -15,6 +16,7 @@ const MVP: FunctionComponent = () => {
 
   const isDesktop = useMediaQuery('(min-width: 1024px)')
 
+  // GSAP animations
   useLayoutEffect(() => {
     if (isDesktop) {
       const containerEl = containerRef.current

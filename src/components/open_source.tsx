@@ -8,6 +8,7 @@ import opensourceOff_img from 'assets/open_source_off.png'
 import opensourceOn_img from 'assets/open_source_on.png'
 
 const OpenSource: FunctionComponent = () => {
+  // References
   const lightOffImageRef = useRef(null as any)
 
   const isDesktop = useMediaQuery('(min-width: 1024px)')

@@ -8,11 +8,13 @@ import { useMediaQuery } from 'utils'
 gsap.registerPlugin(ScrollTrigger)
 
 const Iterating: FunctionComponent = () => {
+  // References
   const containerRef = useRef(null)
   const textRef = useRef(null)
 
   const isDesktop = useMediaQuery('(min-width: 1024px)')
 
+  // GSAP animation setup
   useLayoutEffect(() => {
     if (isDesktop) {
       const sectionHeight = 200

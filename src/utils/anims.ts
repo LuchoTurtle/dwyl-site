@@ -1,3 +1,4 @@
+// GSAP stagger reveal template. Used on text.
 export const staggerReveal = {
   duration: 1,
   y: 200,
@@ -8,6 +9,7 @@ export const staggerReveal = {
   }
 }
 
+// Fade up reveal template. Used on value box.
 export const fadeUpReveal = {
   duration: 1,
   opacity: 0,
@@ -15,6 +17,7 @@ export const fadeUpReveal = {
   ease: 'power4.out'
 }
 
+// Scale up reveal. Used when hovering value boxes.
 export const scaleUpReveal = {
   duration: 1,
   opacity: 0,

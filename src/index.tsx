@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 
 import Definition from 'components/definition'
@@ -20,7 +20,37 @@ const container = document.getElementById('root') as HTMLDivElement
 const root = createRoot(container)
 
 function App() {
+  // Local state
   const [sceneLoaded, setSceneLoaded] = useState(false)
+
+  // Console easter egg
+  useEffect(() => {
+    let title_style = [
+      'font-weight: bold',
+      'font-size: 50px',
+      `color: red`,
+      `text-shadow: 3px 3px 0 rgb(217,31,38)`,
+      `6px 6px 0 rgb(226,91,14)`,
+      `9px 9px 0 rgb(245,221,8)`,
+      `12px 12px 0 rgb(5,148,68)`,
+      `15px 15px 0 rgb(25,18,168)`
+    ].join(';')
+    console.log('%c Hey there!', title_style)
+
+    let subtitle_styles = [
+      `font-size: 12px`,
+      `font-family: monospace`,
+      `background: white`,
+      `display: inline-block`,
+      `color: black`,
+      `padding: 8px 19px`,
+      `border: 1px dashed;`
+    ].join(';')
+    console.log(
+      "%c😊 Great seeing you here!\n🎉 We always fancy those that are curious by nature.\n👨‍💻 Interested in working with us? Check out our contact details at the bottom of the page.",
+      subtitle_styles
+    )
+  }, [])
 
   return (
     <div className="overflow-x-hidden bg-white font-montserrat">

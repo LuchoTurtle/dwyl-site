@@ -8,6 +8,7 @@ import { fadeUpReveal, useMediaQuery } from 'utils'
 gsap.registerPlugin(ScrollTrigger)
 
 const Definition: FunctionComponent = () => {
+  // References
   const containerRef = useRef(null)
   const titleRef = useRef(null)
   const supRef = useRef(null)
@@ -17,7 +18,9 @@ const Definition: FunctionComponent = () => {
 
   const isDesktop = useMediaQuery('(min-width: 1024px)')
 
+  // GSAP animation setup
   useLayoutEffect(() => {
+    
     // Only run the animation if we're on mobile
     if (isDesktop) {
       const containerEl = containerRef.current

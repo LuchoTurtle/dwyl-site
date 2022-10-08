@@ -1,9 +1,4 @@
-import {
-  FunctionComponent,
-  useEffect,
-  useRef,
-  useState
-} from 'react'
+import { FunctionComponent, useEffect, useRef, useState } from 'react'
 
 import gsap from 'gsap'
 
@@ -11,23 +6,24 @@ interface LoadingProps {
   done: boolean
 }
 const Loading: FunctionComponent<LoadingProps> = (props: LoadingProps) => {
-  const sceneIsLoaded = props.done
-
-  // References for animation
-  const containerRef = useRef(null)
-  const text1Ref = useRef(null)
-  const text2Ref = useRef(null)
-
   // Local state
   const [progress, setProgress] = useState(0)
   const [done, setDone] = useState(false)
+
+  // Checks if the Hero scene is loaded (only applicable to desktops)
+  const sceneIsLoaded = props.done
+
+  // References
+  const containerRef = useRef(null)
+  const text1Ref = useRef(null)
+  const text2Ref = useRef(null)
 
   // When mounted, the document is not scrollable
   useEffect(() => {
     document.body.style.overflow = 'hidden'
   }, [])
 
-  // Progress
+  // Progress animation
   useEffect(() => {
     const intervalId = setInterval(() => {
       setProgress(progress + (1 - progress) * 0.1)
@@ -46,6 +42,7 @@ const Loading: FunctionComponent<LoadingProps> = (props: LoadingProps) => {
     }
   }, [sceneIsLoaded])
 
+  // Done animation
   useEffect(() => {
     if (done) {
       const containerEl = containerRef.current

@@ -1,6 +1,11 @@
 // Hooks imported from https://usehooks-ts.com/
 import { RefObject, useEffect, useLayoutEffect, useRef, useState } from 'react'
 
+/**
+ * Queries media width.
+ * @param query screen size string.
+ * @returns media query. If '1024px' is passed, it returns true if it's on a desktop and false if it's not.
+ */
 export function useMediaQuery(query: string): boolean {
   const getMatches = (query: string): boolean => {
     // Prevents SSR issues
@@ -42,10 +47,19 @@ export function useMediaQuery(query: string): boolean {
   return matches
 }
 
+/**
+ * This hook fixes this problem by switching between useEffect and useLayoutEffect following the execution environment.
+ */
 const useIsomorphicLayoutEffect =
   typeof window !== 'undefined' ? useLayoutEffect : useEffect
 
-// Window Event based useEventListener interface
+/**
+ * Window Event based useEventListener interface
+ * @param eventName event name
+ * @param handler handler
+ * @param element element to assign
+ * @param options option objects
+ */
 function useEventListener<K extends keyof WindowEventMap>(
   eventName: K,
   handler: (event: WindowEventMap[K]) => void,
@@ -53,7 +67,13 @@ function useEventListener<K extends keyof WindowEventMap>(
   options?: boolean | AddEventListenerOptions
 ): void
 
-// Element Event based useEventListener interface
+/**
+ * Element Event based useEventListener interface
+ * @param eventName event name
+ * @param handler handler
+ * @param element element to assign
+ * @param options option objects
+ */
 function useEventListener<
   K extends keyof HTMLElementEventMap,
   T extends HTMLElement = HTMLDivElement
@@ -64,7 +84,14 @@ function useEventListener<
   options?: boolean | AddEventListenerOptions
 ): void
 
-// Document Event based useEventListener interface
+
+/**
+ * Document Event based useEventListener interface
+ * @param eventName event name
+ * @param handler handler
+ * @param element element to assign
+ * @param options option objects
+ */
 function useEventListener<K extends keyof DocumentEventMap>(
   eventName: K,
   handler: (event: DocumentEventMap[K]) => void,
@@ -72,6 +99,13 @@ function useEventListener<K extends keyof DocumentEventMap>(
   options?: boolean | AddEventListenerOptions
 ): void
 
+/**
+ * Event listener based on window event map.
+ * @param eventName event name
+ * @param handler handler
+ * @param element element to assign
+ * @param options option objects
+ */
 function useEventListener<
   KW extends keyof WindowEventMap,
   KH extends keyof HTMLElementEventMap,
@@ -110,6 +144,11 @@ function useEventListener<
   }, [eventName, element, options])
 }
 
+/**
+ * Checks if element is being hovered.
+ * @param elementRef reference to element to be checked.
+ * @returns true if element is being hovered and false if it's not.
+ */
 export function useHover<T extends HTMLElement = HTMLElement>(
   elementRef: RefObject<T>
 ): boolean {

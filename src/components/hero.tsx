@@ -16,8 +16,10 @@ interface HeroProps {
   onSceneLoad: () => void
 }
 const Hero: FunctionComponent<HeroProps> = (props: HeroProps) => {
+  // Local state
   const [loadingComplete, setLoadingComplete] = useState(false)
 
+  // References
   const titleRef = useRef(null)
   const subtitleRef = useRef(null)
   const description1Ref = useRef(null)
@@ -25,12 +27,13 @@ const Hero: FunctionComponent<HeroProps> = (props: HeroProps) => {
 
   const isDesktop = useMediaQuery('(min-width: 1024px)')
 
+  // Callback function when scene is loaded. Runs the passed "onSceneLoad" function and sets loading complete to trigger first-time animation on hero.
   const onSceneLoaded = () => {
     props.onSceneLoad()
     setLoadingComplete(true)
   }
 
-  // Setting up animations
+  // GSAP animation setup
   useEffect(() => {
     if (loadingComplete) {
       const titleEl = titleRef.current
@@ -39,8 +42,8 @@ const Hero: FunctionComponent<HeroProps> = (props: HeroProps) => {
       const description2El = description2Ref.current
 
       const tl = gsap.timeline({ delay: loadingAnimationDuration })
-      tl.from(titleEl, staggerReveal)
-      tl.from(subtitleEl, { ...staggerReveal, y: 250 }, '<')
+      tl.from(titleEl, { ...staggerReveal, y: 450 })
+      tl.from(subtitleEl, { ...staggerReveal, y: 450 }, '<')
       tl.from(description1El, fadeUpReveal, '<+=.4')
       tl.from(description2El, fadeUpReveal, '<+=.1')
 

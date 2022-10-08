@@ -14,7 +14,7 @@ import step3_img from 'assets/step3.png'
 
 gsap.registerPlugin(ScrollTrigger)
 
-// Carousel slider component (this is for mobile devices only)
+// Carousel slider component (this is for mobile devices only) --------------
 interface SliderItemProps {
   title: string
   subtitle: string
@@ -104,8 +104,9 @@ const SliderCarousel: FunctionComponent = () => {
   )
 }
 
-// Layered pinning components (this is for desktop devices only)
+// Layered pinning components (this is for desktop devices only) -----------
 const PinningLayers: FunctionComponent = () => {
+  // References
   const step0Ref = useRef(null)
   const step1Ref = useRef(null)
   const step2Ref = useRef(null)
@@ -124,6 +125,7 @@ const PinningLayers: FunctionComponent = () => {
   const imageRef2 = useRef(null)
   const imageRef3 = useRef(null)
 
+  // GSAP animations
   useLayoutEffect(() => {
     const textScrollTriggerTemplate = (triggerEl: any) => {
       return {
@@ -389,7 +391,7 @@ const PinningLayers: FunctionComponent = () => {
   )
 }
 
-// Exported components
+// Exported components -------------------
 export const StepsTitle: FunctionComponent = () => {
   const containerRef = useRef(null)
   const titleRef = useRef(null)
