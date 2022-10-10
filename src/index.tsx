@@ -53,7 +53,7 @@ function App() {
   }, [])
 
   return (
-    <div className="overflow-x-hidden bg-white font-montserrat">
+    <div className="overflow-x-hidden bg-white font-montserrat scroll-smooth">
       <Loading done={sceneLoaded} />
 
       <Hero
