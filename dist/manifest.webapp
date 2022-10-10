@@ -1,0 +1,14 @@
+{
+  "version": "0.1.0",
+  "name": "reactjs-vite-tailwindcss-boilerplate",
+  "description": "This is a React + vite boilerplate to be used with Tailwindcss.",
+  "icons": {
+    "60": "/firefox_app_60x60.png",
+    "128": "/firefox_app_128x128.png",
+    "512": "/firefox_app_512x512.png"
+  },
+  "developer": {
+    "name": "João Paulo Moraes",
+    "url": "https://github.com/joaopaulomoraes"
+  }
+}
