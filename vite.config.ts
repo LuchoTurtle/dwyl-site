@@ -17,6 +17,7 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
   } else {
     // build specific config
     return {
+      base: './',
       build: {
         outDir: 'docs'
       },
