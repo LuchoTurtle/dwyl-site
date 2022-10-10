@@ -2,6 +2,7 @@ import { FunctionComponent, useEffect, useLayoutEffect, useRef } from 'react'
 
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
 import { scaleUpReveal, useHover, useMediaQuery } from 'utils'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -70,7 +71,9 @@ const ValueBox: FunctionComponent<ValueBoxProps> = (props: ValueBoxProps) => {
       <div className="flex h-full flex-col justify-start rounded-[2.6rem] bg-white pb-6 pl-8 pr-5 pt-6 md:pb-8 md:pl-10 md:pr-7 md:pt-8 lg:justify-between">
         {titlePosition === 'bottom' ? (
           <>
-            <p className="font-normal text-stone-700">{children}</p>
+            <p className="text-sm font-normal text-stone-700 2xl:text-lg">
+              {children}
+            </p>
 
             <div className="mt-4 flex flex-row justify-between text-xl font-bold">
               <Title
@@ -236,10 +239,8 @@ const Values: FunctionComponent = () => {
             borderStyles="from-[#D8D3AB] via-[#E39E9A] to-[#FA7B7B]"
             titleOrientation={isDesktop ? 'right' : 'left'}
           >
-            We recycle and are carbon neutral, but it’s not just the planet’s
-            environment we want to improve. We love projects that have a
-            positive effect on the world. Take a look at the kinds of project we
-            love.
+            We are growing organically, without investment, to be flexible
+            enough to move in the direction our community takes us!
           </ValueBox>
         </div>
       </div>
