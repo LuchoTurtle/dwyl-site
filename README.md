@@ -1,4 +1,21 @@
-# Welcome to the dwyl website 2.0
+<div align="center">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img alt="logo" width="20%" src="https://user-images.githubusercontent.com/17494745/196535695-c5fcd520-c288-4cb8-98c0-9a7d5029d367.png">
+  </a>
+
+  <h3 align="center">DWYL website 2.0</h3>
+
+  <p align="center">
+    An alternative to the original dwyl site.
+    <br />
+    <a href="https://luchoturtle.github.io/dwyl-site/">View Demo</a>
+  </p>
+</div>
+
+</br></br>
+</br>
+
+
 
 This is a simpler and revamped version of the [original dwyl website](https://github.com/dwyl/dwyl-site). Meant to serve as a scrolling experience, this version adds 3D scenes, scrubbing animations and a minimalistic aesthetic. 
 
