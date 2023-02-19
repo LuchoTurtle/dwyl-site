@@ -341,9 +341,7 @@ const PinningLayers: FunctionComponent = () => {
                 className="block translate-y-[100%] opacity-0"
                 ref={description2Ref}
               >
-                we work together to understand the identified problem and
-                confirm the intended users feel the pain and need for a
-                solution.
+                we build the solution following agile/lean software development best practices and get feedback from users ASAP. 
               </span>
             </div>
           </div>
