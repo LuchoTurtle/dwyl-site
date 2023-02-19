@@ -24,7 +24,7 @@ const MVP: FunctionComponent = () => {
       const playerEl = playerRef.current
       const productEl = productRef.current
 
-      let tl = gsap.timeline()
+      const tl = gsap.timeline()
 
       // Opacity animation
       tl.from(beEl, {
@@ -48,7 +48,7 @@ const MVP: FunctionComponent = () => {
         ease: 'none'
       })
       // Description animations
-      let player = gsap.from(playerEl, {
+      const player = gsap.from(playerEl, {
         ...fadeUpReveal,
         scrollTrigger: {
           trigger: containerEl,
@@ -56,7 +56,7 @@ const MVP: FunctionComponent = () => {
         }
       })
 
-      let product = gsap.from(productEl, {
+      const product = gsap.from(productEl, {
         ...fadeUpReveal,
         scrollTrigger: {
           trigger: containerEl,

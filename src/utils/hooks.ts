@@ -84,7 +84,6 @@ function useEventListener<
   options?: boolean | AddEventListenerOptions
 ): void
 
-
 /**
  * Document Event based useEventListener interface
  * @param eventName event name

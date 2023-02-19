@@ -43,10 +43,9 @@ const Portfolio: FunctionComponent = () => {
                   type="button"
                   className="relative inline-block h-10 max-h-full w-24 max-w-full cursor-pointer
                   rounded-full border border-white 
-                  px-2.5 py-2.5 text-xs
-                  leading-tight text-white transition 
-                  duration-150 ease-in-out hover:bg-white hover:bg-opacity-10 hover:shadow-lg active:bg-white active:bg-opacity-50
-                  active:shadow-lg"
+                  p-2.5 text-xs leading-tight
+                  text-white transition duration-150 
+                  ease-in-out hover:bg-white hover:bg-opacity-10 hover:shadow-lg active:bg-white active:bg-opacity-50 active:shadow-lg"
                 >
                   check code
                 </button>
@@ -82,10 +81,9 @@ const Portfolio: FunctionComponent = () => {
                   type="button"
                   className="relative inline-block h-10 max-h-full w-24 max-w-full cursor-pointer
                   rounded-full border border-white 
-                  px-2.5 py-2.5 text-xs
-                  leading-tight text-white transition 
-                  duration-150 ease-in-out hover:bg-white hover:bg-opacity-10 hover:shadow-lg active:bg-white active:bg-opacity-50
-                  active:shadow-lg"
+                  p-2.5 text-xs leading-tight
+                  text-white transition duration-150 
+                  ease-in-out hover:bg-white hover:bg-opacity-10 hover:shadow-lg active:bg-white active:bg-opacity-50 active:shadow-lg"
                 >
                   check code
                 </button>
@@ -123,10 +121,9 @@ const Portfolio: FunctionComponent = () => {
                   type="button"
                   className="relative inline-block h-10 max-h-full w-24 max-w-full cursor-pointer
                   rounded-full border border-white 
-                  px-2.5 py-2.5 text-xs
-                  leading-tight text-white transition 
-                  duration-150 ease-in-out hover:bg-white hover:bg-opacity-10 hover:shadow-lg active:bg-white active:bg-opacity-50
-                  active:shadow-lg"
+                  p-2.5 text-xs leading-tight
+                  text-white transition duration-150 
+                  ease-in-out hover:bg-white hover:bg-opacity-10 hover:shadow-lg active:bg-white active:bg-opacity-50 active:shadow-lg"
                 >
                   visit site
                 </button>
@@ -159,10 +156,9 @@ const Portfolio: FunctionComponent = () => {
                   type="button"
                   className="relative inline-block h-10 max-h-full w-24 max-w-full cursor-pointer
                   rounded-full border border-white 
-                  px-2.5 py-2.5 text-xs
-                  leading-tight text-white transition 
-                  duration-150 ease-in-out hover:bg-white hover:bg-opacity-10 hover:shadow-lg active:bg-white active:bg-opacity-50
-                  active:shadow-lg"
+                  p-2.5 text-xs leading-tight
+                  text-white transition duration-150 
+                  ease-in-out hover:bg-white hover:bg-opacity-10 hover:shadow-lg active:bg-white active:bg-opacity-50 active:shadow-lg"
                 >
                   visit site
                 </button>

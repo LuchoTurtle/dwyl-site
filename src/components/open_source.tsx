@@ -36,7 +36,7 @@ const OpenSource: FunctionComponent = () => {
   }, [])
 
   return (
-    <div className="flex flex-col items-center pl-5 pr-5">
+    <div className="flex flex-col items-center px-5">
       {isDesktop ? (
         <div
           className="flex h-[36rem] w-full cursor-pointer flex-col items-center justify-center"
@@ -73,10 +73,9 @@ const OpenSource: FunctionComponent = () => {
           type="button"
           className="relative mt-16 inline-block h-10 max-h-full w-28 max-w-full cursor-pointer
               rounded-full border border-stone-800
-              px-2.5 py-2.5 text-xs
-              leading-tight text-stone-800 transition 
-              duration-150 ease-in-out hover:bg-stone-800 hover:bg-opacity-10 hover:shadow-lg active:bg-stone-800 active:bg-opacity-20
-              active:shadow-lg"
+              p-2.5 text-xs leading-tight
+              text-stone-800 transition duration-150 
+              ease-in-out hover:bg-stone-800 hover:bg-opacity-10 hover:shadow-lg active:bg-stone-800 active:bg-opacity-20 active:shadow-lg"
         >
           check it out
         </button>

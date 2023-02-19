@@ -10,7 +10,7 @@ import { useMediaQuery } from 'utils'
 import step0_img from 'assets/step0.png'
 import step1_img from 'assets/step1.png'
 import step2_img from 'assets/step2.png'
-import step3_img from 'assets/step3.png'  
+import step3_img from 'assets/step3.png'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -28,10 +28,10 @@ const SliderItem: FunctionComponent<SliderItemProps> = (
 
   return (
     <div>
-      <div className="pr-8 pl-8 sm:pl-28 sm:pr-28 md:pl-48 md:pr-48">
-        <img className="ml-auto mr-auto mt-12 h-auto w-[35vh]" src={image} />
+      <div className="px-8 sm:px-28 md:px-48">
+        <img className="mx-auto mt-12 h-auto w-[35vh]" src={image} />
       </div>
-      <div className="sm mt-20 w-10/12 pl-8 text-start sm:pl-12 sm:pr-12">
+      <div className="sm mt-20 w-10/12 pl-8 text-start sm:px-12">
         <h4 className="text-xs font-bold text-emerald-900 md:text-base">
           {title}
         </h4>
@@ -160,7 +160,7 @@ const PinningLayers: FunctionComponent = () => {
 
     // Animations -------------------------
     // Extending and pinning the container on top
-    let scroll = ScrollTrigger.create({
+    const scroll = ScrollTrigger.create({
       trigger: contentContainerEl,
       start: 'top top',
       end: `+=600%`, // each section has 200vh so it must be the sum of every section
@@ -169,66 +169,66 @@ const PinningLayers: FunctionComponent = () => {
     })
 
     // Texts
-    let title0Out = gsap.to(title0El, {
+    const title0Out = gsap.to(title0El, {
       scrollTrigger: textScrollTriggerTemplate(step0El),
       yPercent: -200
     })
-    let description0Out = gsap.to(description0El, {
+    const description0Out = gsap.to(description0El, {
       scrollTrigger: textScrollTriggerTemplate(step0El),
       yPercent: -200
     })
 
-    let title1In = gsap.to(title1El, {
-      scrollTrigger: textScrollTriggerTemplate(step0El),
-      y: 0,
-      yPercent: 0,
-      opacity: 1
-    })
-    let description1In = gsap.to(description1El, {
+    const title1In = gsap.to(title1El, {
       scrollTrigger: textScrollTriggerTemplate(step0El),
       y: 0,
       yPercent: 0,
       opacity: 1
     })
-
-    let title1Out = gsap.to(title1El, {
-      scrollTrigger: textScrollTriggerTemplate(step1El),
-      yPercent: -200
-    })
-    let description1Out = gsap.to(description1El, {
-      scrollTrigger: textScrollTriggerTemplate(step1El),
-      yPercent: -200
-    })
-
-    let title2In = gsap.to(title2El, {
-      scrollTrigger: textScrollTriggerTemplate(step1El),
-      y: 0,
-      yPercent: 0,
-      opacity: 1
-    })
-    let description2In = gsap.to(description2El, {
-      scrollTrigger: textScrollTriggerTemplate(step1El),
+    const description1In = gsap.to(description1El, {
+      scrollTrigger: textScrollTriggerTemplate(step0El),
       y: 0,
       yPercent: 0,
       opacity: 1
     })
 
-    let title2Out = gsap.to(title2El, {
+    const title1Out = gsap.to(title1El, {
+      scrollTrigger: textScrollTriggerTemplate(step1El),
+      yPercent: -200
+    })
+    const description1Out = gsap.to(description1El, {
+      scrollTrigger: textScrollTriggerTemplate(step1El),
+      yPercent: -200
+    })
+
+    const title2In = gsap.to(title2El, {
+      scrollTrigger: textScrollTriggerTemplate(step1El),
+      y: 0,
+      yPercent: 0,
+      opacity: 1
+    })
+    const description2In = gsap.to(description2El, {
+      scrollTrigger: textScrollTriggerTemplate(step1El),
+      y: 0,
+      yPercent: 0,
+      opacity: 1
+    })
+
+    const title2Out = gsap.to(title2El, {
       scrollTrigger: textScrollTriggerTemplate(step2El),
       yPercent: -200
     })
-    let description2Out = gsap.to(description2El, {
+    const description2Out = gsap.to(description2El, {
       scrollTrigger: textScrollTriggerTemplate(step2El),
       yPercent: -200
     })
 
-    let title3In = gsap.to(title3El, {
+    const title3In = gsap.to(title3El, {
       scrollTrigger: textScrollTriggerTemplate(step2El),
       y: 0,
       yPercent: 0,
       opacity: 1
     })
-    let description3In = gsap.to(description3El, {
+    const description3In = gsap.to(description3El, {
       scrollTrigger: textScrollTriggerTemplate(step2El),
       y: 0,
       yPercent: 0,
@@ -236,15 +236,15 @@ const PinningLayers: FunctionComponent = () => {
     })
 
     // Images
-    let step0Image = gsap.to(image0El, {
+    const step0Image = gsap.to(image0El, {
       scrollTrigger: textScrollTriggerTemplate(step0El),
       opacity: 0
     })
-    let step1Image = gsap.to(image1El, {
+    const step1Image = gsap.to(image1El, {
       scrollTrigger: textScrollTriggerTemplate(step1El),
       opacity: 0
     })
-    let step2Image = gsap.to(image2El, {
+    const step2Image = gsap.to(image2El, {
       scrollTrigger: textScrollTriggerTemplate(step2El),
       opacity: 0
     })
@@ -278,7 +278,7 @@ const PinningLayers: FunctionComponent = () => {
         ref={contentContainerRef}
       >
         <div className="absolute z-[14] flex h-full w-full">
-          <div className="flex flex-1 flex-col items-start justify-center pl-12 pr-12">
+          <div className="flex flex-1 flex-col items-start justify-center px-12">
             <div className="overflow-hidden text-2xl font-bold text-emerald-900 2xl:text-4xl">
               <span className="block" ref={title0Ref}>
                 0. we get you to the finish line
@@ -293,13 +293,13 @@ const PinningLayers: FunctionComponent = () => {
           </div>
           <img
             src={step0_img}
-            className="h-auto w-1/2 object-contain pl-12 pr-12"
+            className="h-auto w-1/2 object-contain px-12"
             ref={imageRef0}
           />
         </div>
 
         <div className="absolute z-[13] flex h-full w-full">
-          <div className="flex flex-1 flex-col items-start justify-center pl-12 pr-12">
+          <div className="flex flex-1 flex-col items-start justify-center px-12">
             <div className="overflow-hidden text-2xl font-bold text-white 2xl:text-4xl">
               <span
                 className="block translate-y-[100%] opacity-0"
@@ -321,13 +321,13 @@ const PinningLayers: FunctionComponent = () => {
           </div>
           <img
             src={step1_img}
-            className="h-auto w-1/2 object-contain pl-12 pr-12"
+            className="h-auto w-1/2 object-contain px-12"
             ref={imageRef1}
           />
         </div>
 
         <div className="absolute z-[12] flex h-full w-full">
-          <div className="flex flex-1 flex-col items-start justify-center pl-12 pr-12">
+          <div className="flex flex-1 flex-col items-start justify-center px-12">
             <div className="overflow-hidden text-2xl font-bold text-[#27292F] 2xl:text-4xl">
               <span
                 className="block translate-y-[100%] opacity-0"
@@ -349,13 +349,13 @@ const PinningLayers: FunctionComponent = () => {
           </div>
           <img
             src={step2_img}
-            className="h-auto w-1/2 object-contain pl-12 pr-12"
+            className="h-auto w-1/2 object-contain px-12"
             ref={imageRef2}
           />
         </div>
 
         <div className="absolute z-[11] flex h-full w-full">
-          <div className="flex flex-1 flex-col items-start justify-center pl-12 pr-12">
+          <div className="flex flex-1 flex-col items-start justify-center px-12">
             <div className="overflow-hidden text-2xl font-bold text-[#27292F] 2xl:text-4xl">
               <span
                 className="block translate-y-[100%] opacity-0"
@@ -376,7 +376,7 @@ const PinningLayers: FunctionComponent = () => {
           </div>
           <img
             src={step3_img}
-            className="h-auto w-1/2 object-contain pl-12 pr-12"
+            className="h-auto w-1/2 object-contain px-12"
             ref={imageRef3}
           />
         </div>
@@ -406,7 +406,7 @@ export const StepsTitle: FunctionComponent = () => {
       const titleEl = titleRef.current
 
       // Pinning
-      let pin = gsap.from(containerEl, {
+      const pin = gsap.from(containerEl, {
         scrollTrigger: {
           trigger: containerEl,
           scrub: true,
@@ -418,7 +418,7 @@ export const StepsTitle: FunctionComponent = () => {
       })
 
       // Fade in and fade out
-      let fade = gsap.timeline({
+      const fade = gsap.timeline({
         scrollTrigger: {
           trigger: containerEl,
           start: 'top top',
@@ -468,7 +468,7 @@ export const StepsTitle: FunctionComponent = () => {
         </div>
       ) : (
         <div
-          className="mb-5 flex w-full flex-col justify-center pl-10 pr-10 text-center lg:h-screen"
+          className="mb-5 flex w-full flex-col justify-center px-10 text-center lg:h-screen"
           ref={containerRef}
         >
           <div ref={titleRef} className="opacity-100 lg:opacity-0">

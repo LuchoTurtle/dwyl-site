@@ -60,7 +60,7 @@ const Hero: FunctionComponent<HeroProps> = (props: HeroProps) => {
 
   return (
     <div className="flex max-h-screen min-h-screen w-full flex-col">
-      <div className="z-10 flex h-fit flex-row flex-nowrap items-center justify-between pl-10 pr-10 pt-10">
+      <div className="z-10 flex h-fit flex-row flex-nowrap items-center justify-between px-10 pt-10">
         <div className="h-12 w-24">
           <img className="max-h-full max-w-full" src={logo} />
         </div>
@@ -87,11 +87,11 @@ const Hero: FunctionComponent<HeroProps> = (props: HeroProps) => {
           />
         </div>
       ) : (
-        <img className="ml-auto mr-auto mt-12 h-auto w-[35vh]" src={hero_img} />
+        <img className="mx-auto mt-12 h-auto w-[35vh]" src={hero_img} />
       )}
 
       <div className="z-10 flex flex-1 flex-col justify-end lg:flex-row lg:justify-start">
-        <div className="mb-[5%] pr-5 pl-5 text-center lg:mb-0 lg:flex lg:w-1/2 lg:flex-col lg:justify-center lg:pr-0 lg:pl-[10%]">
+        <div className="mb-[5%] px-5 text-center lg:mb-0 lg:flex lg:w-1/2 lg:flex-col lg:justify-center lg:pr-0 lg:pl-[10%]">
           <div className="relative flex h-[2.5rem] w-full flex-row justify-center overflow-hidden md:h-[3.5rem] lg:justify-start 2xl:h-[5rem]">
             <p
               className="absolute text-4xl font-semibold leading-none tracking-tight text-green-900 md:text-[3.5rem] 2xl:text-[5rem]"

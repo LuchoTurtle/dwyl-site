@@ -25,7 +25,7 @@ function App() {
 
   // Console easter egg
   useEffect(() => {
-    let title_style = [
+    const title_style = [
       'font-weight: bold',
       'font-size: 50px',
       `color: red`,
@@ -37,7 +37,7 @@ function App() {
     ].join(';')
     console.log('%c Hey there!', title_style)
 
-    let subtitle_styles = [
+    const subtitle_styles = [
       `font-size: 12px`,
       `font-family: monospace`,
       `background: white`,
@@ -47,13 +47,13 @@ function App() {
       `border: 1px dashed;`
     ].join(';')
     console.log(
-      "%c😊 Great seeing you here!\n🎉 We always fancy those that are curious by nature.\n👨‍💻 Interested in working with us? Check out our contact details at the bottom of the page.",
+      '%c😊 Great seeing you here!\n🎉 We always fancy those that are curious by nature.\n👨‍💻 Interested in working with us? Check out our contact details at the bottom of the page.',
       subtitle_styles
     )
   }, [])
 
   return (
-    <div className="overflow-x-hidden bg-white font-montserrat scroll-smooth">
+    <div className="overflow-x-hidden scroll-smooth bg-white font-montserrat">
       <Loading done={sceneLoaded} />
 
       <Hero
@@ -81,7 +81,7 @@ function App() {
         <Iterating />
       </div>
 
-      <div className="mr-8 ml-8 mt-40 flex flex-col items-center">
+      <div className="mx-8 mt-40 flex flex-col items-center">
         <Portfolio />
       </div>
 
@@ -89,7 +89,7 @@ function App() {
         <OpenSource />
       </div>
 
-      <div className="mt-40 flex pr-10 pl-10">
+      <div className="mt-40 flex px-10">
         <span className="w-full bg-stone-200 p-[1px]"></span>
       </div>
 

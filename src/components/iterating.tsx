@@ -23,7 +23,7 @@ const Iterating: FunctionComponent = () => {
       const textEl = textRef.current
 
       // Pinning
-      let pin = gsap.from(containerEl, {
+      const pin = gsap.from(containerEl, {
         scrollTrigger: {
           trigger: containerEl,
           scrub: true,
@@ -35,7 +35,7 @@ const Iterating: FunctionComponent = () => {
       })
 
       // Fade in and fade out
-      let fade = gsap.timeline({
+      const fade = gsap.timeline({
         scrollTrigger: {
           trigger: containerEl,
           start: 'top top',
@@ -69,7 +69,7 @@ const Iterating: FunctionComponent = () => {
           ref={textRef}
           className="text-center opacity-100 lg:opacity-0 xl:w-4/5"
         >
-          <h1 className="mr-[15%] ml-[15%] text-base font-semibold leading-4 text-stone-800 md:text-2xl xl:text-3xl 2xl:text-4xl">
+          <h1 className="mx-[15%] text-base font-semibold leading-4 text-stone-800 md:text-2xl xl:text-3xl 2xl:text-4xl">
             <span>by iterating over these </span>
             <span className="text-[#1DAA6F]">3 simple steps </span>
             <span>we maintain a </span>
@@ -88,7 +88,7 @@ const Iterating: FunctionComponent = () => {
       </div>
     </div>
   ) : (
-    <div className="mr-6 ml-6 text-center sm:mr-[15%] sm:ml-[15%]">
+    <div className="mx-6 text-center sm:mx-[15%]">
       <h1 className="text-base font-semibold leading-4 text-stone-800 md:text-2xl">
         <span>by iterating over these </span>
         <span className="text-[#1DAA6F]">3 simple steps </span>

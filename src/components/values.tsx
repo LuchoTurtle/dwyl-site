@@ -69,7 +69,7 @@ const ValueBox: FunctionComponent<ValueBoxProps> = (props: ValueBoxProps) => {
       ref={hoverRef}
     >
       {titlePosition === 'bottom' ? (
-        <div className="flex h-full flex-col justify-start rounded-[2.6rem] bg-white pb-6 pl-8 pr-5 pt-6 md:pb-8 md:pl-10 md:pr-7 md:pt-8 lg:justify-between">
+        <div className="flex h-full flex-col justify-start rounded-[2.6rem] bg-white py-6 pl-8 pr-5 md:py-8 md:pl-10 md:pr-7 lg:justify-between">
           <p className="text-sm font-normal text-stone-700 2xl:text-lg">
             {children}
           </p>
@@ -83,7 +83,7 @@ const ValueBox: FunctionComponent<ValueBoxProps> = (props: ValueBoxProps) => {
           </div>
         </div>
       ) : (
-        <div className="flex h-full flex-col justify-start rounded-[2.6rem] bg-white pb-6 pl-8 pr-5 pt-6 md:pb-8 md:pl-10 md:pr-7 md:pt-8">
+        <div className="flex h-full flex-col justify-start rounded-[2.6rem] bg-white py-6 pl-8 pr-5 md:py-8 md:pl-10 md:pr-7">
           <div className="mb-4 flex flex-row justify-between text-xl font-bold">
             <Title
               title={title}
@@ -120,7 +120,7 @@ const Values: FunctionComponent = () => {
       const value3El = value3Ref.current
       const value4El = value4Ref.current
 
-      let value1 = gsap.from(value1El, {
+      const value1 = gsap.from(value1El, {
         ...scaleUpReveal,
         scrollTrigger: {
           immediateRender: false,
@@ -129,7 +129,7 @@ const Values: FunctionComponent = () => {
         }
       })
 
-      let value2 = gsap.from(value2El, {
+      const value2 = gsap.from(value2El, {
         ...scaleUpReveal,
         scrollTrigger: {
           immediateRender: false,
@@ -139,7 +139,7 @@ const Values: FunctionComponent = () => {
         delay: 0.2
       })
 
-      let value3 = gsap.from(value3El, {
+      const value3 = gsap.from(value3El, {
         ...scaleUpReveal,
         scrollTrigger: {
           immediateRender: false,
@@ -149,7 +149,7 @@ const Values: FunctionComponent = () => {
         delay: 0.3
       })
 
-      let value4 = gsap.from(value4El, {
+      const value4 = gsap.from(value4El, {
         ...scaleUpReveal,
         scrollTrigger: {
           immediateRender: false,

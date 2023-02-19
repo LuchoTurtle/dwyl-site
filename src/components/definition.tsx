@@ -20,7 +20,6 @@ const Definition: FunctionComponent = () => {
 
   // GSAP animation setup
   useLayoutEffect(() => {
-    
     // Only run the animation if we're on mobile
     if (isDesktop) {
       const containerEl = containerRef.current
@@ -30,7 +29,7 @@ const Definition: FunctionComponent = () => {
       const typeEl = typeRef.current
       const descriptionEl = descriptionRef.current
 
-      let title = gsap.from(titleEl, {
+      const title = gsap.from(titleEl, {
         ...fadeUpReveal,
         scrollTrigger: {
           immediateRender: false,
@@ -39,7 +38,7 @@ const Definition: FunctionComponent = () => {
         }
       })
 
-      let sup = gsap.from(supEl, {
+      const sup = gsap.from(supEl, {
         ...fadeUpReveal,
         scrollTrigger: {
           immediateRender: false,
@@ -49,7 +48,7 @@ const Definition: FunctionComponent = () => {
         delay: 0.1
       })
 
-      let noun = gsap.from(nounEl, {
+      const noun = gsap.from(nounEl, {
         ...fadeUpReveal,
         scrollTrigger: {
           immediateRender: false,
@@ -59,7 +58,7 @@ const Definition: FunctionComponent = () => {
         delay: 0.2
       })
 
-      let type = gsap.from(typeEl, {
+      const type = gsap.from(typeEl, {
         ...fadeUpReveal,
         scrollTrigger: {
           immediateRender: false,
@@ -69,7 +68,7 @@ const Definition: FunctionComponent = () => {
         delay: 0.3
       })
 
-      let description = gsap.from(descriptionEl, {
+      const description = gsap.from(descriptionEl, {
         ...fadeUpReveal,
         scrollTrigger: {
           immediateRender: false,
