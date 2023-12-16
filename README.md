@@ -8,7 +8,6 @@
   <p align="center">
     An alternative to the original dwyl site.
     <br />
-    <a href="https://luchoturtle.github.io/dwyl-site/">View Demo</a>
   </p>
 </div>
 
