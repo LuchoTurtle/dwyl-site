@@ -21,7 +21,7 @@ You can find the original design prototype in [Figma](https://www.figma.com/file
 
 ## Technology
 
-The website is developed with Typescript and React. [Spline](https://spline.design/) is used on 3D scenes and [Gsap with Scrolltrigger](https://greensock.com/gsap/) for animations. [TailwindCSS](https://github.com/tailwindlabs/tailwindcss) is used to style the page. 
+The website was developed using Typescript and React. [Spline](https://spline.design/) is used on 3D scenes and [Gsap with Scrolltrigger](https://greensock.com/gsap/) for animations. [TailwindCSS](https://github.com/tailwindlabs/tailwindcss) is used to style the page. 
 
 The website is bundled and served using [Vite](https://vitejs.dev)
 
