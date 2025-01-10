@@ -3,7 +3,7 @@
     <img alt="logo" width="20%" src="https://user-images.githubusercontent.com/17494745/196535695-c5fcd520-c288-4cb8-98c0-9a7d5029d367.png">
   </a>
 
-  <h3 align="center">DWYL website 2.0</h3>
+  <h3 align="center">Alternative DWYL website</h3>
 
   <p align="center">
     An alternative to the original dwyl site.
